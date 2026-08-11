@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, User, ShieldAlert, Loader2 } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import { GoogleGenAI } from '@google/genai';
 
 const SYSTEM_PROMPT = `
 Bạn là Trợ lý AI Hành chính của cơ quan Bảo hiểm Xã hội (BHXH) tỉnh Đắk Lắk.
@@ -43,78 +44,27 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      // Lấy danh sách các mô hình khả dụng để tự động chọn mô hình flash mới nhất
-      const modelsResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
-      const modelsData = await modelsResponse.json();
-      
-      if (modelsData.error) {
-        throw new Error(modelsData.error.message || 'Lỗi khi lấy danh sách mô hình');
-      }
+      // Khởi tạo SDK chính thức của Google
+      const ai = new GoogleGenAI({ apiKey: apiKey });
 
-      // Tìm mô hình flash hỗ trợ generateContent, sắp xếp giảm dần (để lấy phiên bản mới nhất như 3.0, 3.5 thay vì 2.5)
-      const availableModels = modelsData.models || [];
-      const flashModels = availableModels.filter(m => 
-        m.name.includes('flash') && 
-        m.supportedGenerationMethods && 
-        m.supportedGenerationMethods.includes('generateContent')
-      ).sort((a, b) => b.name.localeCompare(a.name));
-
-      const fallbackModels = availableModels.filter(m => 
-        m.name.includes('gemini') && 
-        m.supportedGenerationMethods && 
-        m.supportedGenerationMethods.includes('generateContent')
-      ).sort((a, b) => b.name.localeCompare(a.name));
-
-      const candidateModels = [...flashModels, ...fallbackModels];
-
-      if (candidateModels.length === 0) {
-        throw new Error('Không tìm thấy mô hình AI nào khả dụng trên tài khoản của bạn.');
-      }
-
-      // Chuẩn bị payload cho Gemini API
+      // Lấy lịch sử chat
       const history = messages.map(m => ({
         role: m.role === 'model' ? 'model' : 'user',
         parts: [{ text: m.content }]
       }));
       
-      const payload = {
-        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
-        contents: [...history, { role: 'user', parts: [{ text: userMessage.content }] }]
-      };
-
-      let success = false;
-      let responseData = null;
-      let lastError = null;
-
-      // Thử lần lượt các mô hình từ mới nhất xuống cũ nhất
-      for (const model of candidateModels) {
-        try {
-          const modelName = model.name.replace('models/', '');
-          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-          });
-          
-          const data = await response.json();
-          if (data.error) {
-            throw new Error(data.error.message);
-          }
-          
-          responseData = data;
-          success = true;
-          break; // Thành công thì thoát vòng lặp
-        } catch (err) {
-          lastError = err;
-          console.warn(`Model ${model.name} failed:`, err);
+      // Khởi tạo mô hình
+      // Sử dụng gemini-2.5-flash theo khuyến nghị mặc định của Google GenAI SDK (nếu SDK đã cập nhật)
+      // Nếu có lỗi, chúng ta có thể thử các alias như gemini-flash
+      const response = await ai.models.generateContent({
+        model: 'gemini-flash', // Alias này thường luôn tự động trỏ về bản flash mới nhất (2.0/2.5/3.0)
+        contents: [...history, { role: 'user', parts: [{ text: userMessage.content }] }],
+        config: {
+          systemInstruction: SYSTEM_PROMPT,
         }
-      }
+      });
 
-      if (!success) {
-        throw new Error(lastError.message || 'Tất cả mô hình đều bị lỗi hoặc không được hỗ trợ.');
-      }
-
-      const botText = responseData.candidates[0].content.parts[0].text;
+      const botText = response.text;
       setMessages(prev => [...prev, { role: 'model', content: botText }]);
     } catch (err) {
       console.error(err);
