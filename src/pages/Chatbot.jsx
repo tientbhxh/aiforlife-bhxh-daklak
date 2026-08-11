@@ -44,28 +44,58 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      // Khởi tạo SDK chính thức của Google
       const ai = new GoogleGenAI({ apiKey: apiKey });
 
-      // Lấy lịch sử chat
       const history = messages.map(m => ({
         role: m.role === 'model' ? 'model' : 'user',
         parts: [{ text: m.content }]
       }));
       
-      // Khởi tạo mô hình
-      // Sử dụng gemini-2.5-flash theo khuyến nghị mặc định của Google GenAI SDK (nếu SDK đã cập nhật)
-      // Nếu có lỗi, chúng ta có thể thử các alias như gemini-flash
-      const response = await ai.models.generateContent({
-        model: 'gemini-flash', // Alias này thường luôn tự động trỏ về bản flash mới nhất (2.0/2.5/3.0)
-        contents: [...history, { role: 'user', parts: [{ text: userMessage.content }] }],
-        config: {
-          systemInstruction: SYSTEM_PROMPT,
-        }
-      });
+      // Lấy danh sách model từ API để đảm bảo luôn dùng đúng model đang được hỗ trợ
+      const modelsResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+      const modelsData = await modelsResponse.json();
+      const availableModels = modelsData.models || [];
+      
+      // Lọc các model flash, hỗ trợ generateContent, và ĐẶC BIỆT loại bỏ gemini-2.5 (vì Google đã khóa user mới)
+      const flashModels = availableModels.filter(m => 
+        m.name.includes('flash') && 
+        !m.name.includes('2.5') &&
+        m.supportedGenerationMethods && 
+        m.supportedGenerationMethods.includes('generateContent')
+      ).sort((a, b) => b.name.localeCompare(a.name));
 
-      const botText = response.text;
-      setMessages(prev => [...prev, { role: 'model', content: botText }]);
+      const candidateModels = flashModels.map(m => m.name.replace('models/', ''));
+      
+      // Thêm các alias dự phòng an toàn nhất
+      candidateModels.push('gemini-flash-latest', 'gemini-3.6-flash');
+
+      let success = false;
+      let responseText = '';
+      let lastError = null;
+
+      for (const modelName of candidateModels) {
+        try {
+          const response = await ai.models.generateContent({
+            model: modelName,
+            contents: [...history, { role: 'user', parts: [{ text: userMessage.content }] }],
+            config: {
+              systemInstruction: SYSTEM_PROMPT,
+            }
+          });
+          responseText = response.text;
+          success = true;
+          break; // Thành công thì thoát vòng lặp
+        } catch (err) {
+          lastError = err;
+          console.warn(`Model ${modelName} failed:`, err);
+        }
+      }
+
+      if (!success) {
+        throw lastError || new Error('Không tìm thấy model nào khả dụng');
+      }
+
+      setMessages(prev => [...prev, { role: 'model', content: responseText }]);
     } catch (err) {
       console.error(err);
       setError(`Lỗi kết nối AI: ${err.message}. Vui lòng kiểm tra lại API Key hoặc mạng.`);
