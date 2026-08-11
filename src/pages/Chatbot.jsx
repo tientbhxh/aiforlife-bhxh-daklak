@@ -43,19 +43,50 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
+      // Lấy danh sách các mô hình khả dụng để tự động chọn mô hình flash mới nhất
+      const modelsResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+      const modelsData = await modelsResponse.json();
+      
+      if (modelsData.error) {
+        throw new Error(modelsData.error.message || 'Lỗi khi lấy danh sách mô hình');
+      }
+
+      // Tìm mô hình flash hỗ trợ generateContent
+      const availableModels = modelsData.models || [];
+      const flashModels = availableModels.filter(m => 
+        m.name.includes('flash') && 
+        m.supportedGenerationMethods && 
+        m.supportedGenerationMethods.includes('generateContent')
+      );
+
+      // Nếu không có flash, lấy model bất kỳ có chữ gemini và hỗ trợ generateContent
+      const fallbackModels = availableModels.filter(m => 
+        m.name.includes('gemini') && 
+        m.supportedGenerationMethods && 
+        m.supportedGenerationMethods.includes('generateContent')
+      );
+
+      const targetModel = flashModels.length > 0 ? flashModels[0] : (fallbackModels.length > 0 ? fallbackModels[0] : null);
+
+      if (!targetModel) {
+        throw new Error('Không tìm thấy mô hình AI nào khả dụng trên tài khoản của bạn.');
+      }
+
+      // model.name đã có dạng "models/gemini-..."
+      const modelName = targetModel.name.replace('models/', '');
+
       // Chuẩn bị payload cho Gemini API
       const history = messages.map(m => ({
         role: m.role === 'model' ? 'model' : 'user',
         parts: [{ text: m.content }]
       }));
-      // Bỏ tin nhắn chào mừng mặc định nếu muốn, nhưng ở đây cứ gửi cũng được
       
       const payload = {
         system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
         contents: [...history, { role: 'user', parts: [{ text: userMessage.content }] }]
       };
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
