@@ -1,43 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette - Premium BHXH Theme */
-  --primary-color: #0b5b9c; /* Classic Blue */
-  --primary-light: #207bc2;
-  --primary-dark: #073a64;
+  /* Color Palette - Enterprise BHXH Theme */
+  --primary-color: #1b4a81; /* Deep Blue from BHXH header */
+  --primary-light: #3a6ba5; /* Active sidebar item */
+  --primary-dark: #0d294a;
   --secondary-color: #e59d24; /* Golden accent */
   
-  --bg-light: #f4f7f6;
-  --bg-card: rgba(255, 255, 255, 0.7);
-  --text-dark: #1f2937;
-  --text-muted: #6b7280;
+  --bg-light: #eaedf2; /* Light gray body background */
+  --bg-card: #ffffff;
+  --text-dark: #333333;
+  --text-muted: #666666;
   
-  --success-color: #10b981;
-  --danger-color: #ef4444;
-  --warning-color: #f59e0b;
-  
-  /* Glassmorphism Variables */
-  --glass-bg: rgba(255, 255, 255, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.4);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
-  --glass-blur: blur(12px);
+  --success-color: #5cb85c;
+  --danger-color: #d9534f;
+  --warning-color: #f0ad4e;
   
   /* Layout */
-  --sidebar-width: 280px;
-  --header-height: 70px;
-  --border-radius: 16px;
+  --sidebar-width: 250px;
+  --header-height: 60px;
+  --border-radius: 4px; /* Squared corners for enterprise look */
 }
 
-/* Dark Mode Support */
+/* Dark Mode Support (optional, enterprise usually sticks to light) */
 [data-theme='dark'] {
   --bg-light: #111827;
-  --bg-card: rgba(31, 41, 55, 0.7);
+  --bg-card: #1f2937;
   --text-dark: #f9fafb;
   --text-muted: #9ca3af;
-  
-  --glass-bg: rgba(17, 24, 39, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.05);
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -47,16 +37,30 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   background-color: var(--bg-light);
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(11, 91, 156, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(229, 157, 36, 0.1) 0px, transparent 50%);
-  background-attachment: fixed;
   color: var(--text-dark);
-  line-height: 1.6;
+  line-height: 1.5;
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Watermark Background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: calc(50% + (var(--sidebar-width) / 2));
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background-image: url('/logo-bhxh.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -66,11 +70,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Utility Classes */
 .glass-panel {
-  background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  background: var(--bg-card);
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   border-radius: var(--border-radius);
 }
 
@@ -78,83 +80,61 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--border-radius);
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
   outline: none;
   gap: 0.5rem;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  background: var(--primary-color);
   color: white;
-  box-shadow: 0 4px 12px rgba(11, 91, 156, 0.25);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(11, 91, 156, 0.35);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
+  background: var(--primary-light);
 }
 
 .btn-outline {
   background: transparent;
-  border: 2px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   color: var(--primary-color);
 }
 
 .btn-outline:hover {
-  background: rgba(11, 91, 156, 0.05);
+  background: rgba(27, 74, 129, 0.05);
 }
 
 .input-field {
   width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  background: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+  background: #fff;
   font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text-dark);
-  transition: all 0.2s ease;
-}
-
-[data-theme='dark'] .input-field {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(0, 0, 0, 0.2);
 }
 
 .input-field:focus {
   outline: none;
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 3px rgba(11, 91, 156, 0.15);
+  box-shadow: 0 0 0 2px rgba(58, 107, 165, 0.2);
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(5px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(11, 91, 156, 0.4); }
-  70% { box-shadow: 0 0 0 10px rgba(11, 91, 156, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(11, 91, 156, 0); }
-}
-
-.animate-pulse {
-  animation: pulse 2s infinite;
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
 /* App Layout */
@@ -169,17 +149,18 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   left: 0;
   top: 0;
-  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   z-index: 100;
-  border-right: 1px solid var(--glass-border);
+  background-color: var(--primary-color); /* Deep blue background */
+  color: white;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
 
 .main-content {
   flex: 1;
   margin-left: var(--sidebar-width);
-  padding: 2rem;
+  padding: 1.5rem;
   min-height: 100vh;
 }
 
@@ -194,5 +175,8 @@ h1, h2, h3, h4, h5, h6 {
   }
   .main-content {
     margin-left: 0;
+  }
+  body::before {
+    left: 50%;
   }
 }

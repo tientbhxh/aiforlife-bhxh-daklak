@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, ScanLine, FileText, MessageSquareText, Settings, ChevronLeft, ChevronRight, Moon, Sun } from 'lucide-react';
+import { LayoutDashboard, ScanLine, MessageSquareText, Settings, ChevronLeft, Moon, Sun } from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
   const navItems = [
@@ -11,20 +11,27 @@ const Sidebar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
   ];
 
   return (
-    <aside className={`sidebar glass-panel ${isOpen ? 'open' : ''}`} style={{ 
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`} style={{ 
       transition: 'transform 0.3s ease', 
       position: 'fixed',
       transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
-      zIndex: 1000
+      zIndex: 1000,
+      background: 'var(--primary-color)',
+      color: '#fff',
+      borderRight: 'none',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '2rem' }}>
-        <h2 style={{ color: 'var(--primary-color)', fontSize: '1.5rem', fontWeight: '700' }}>AI For Life</h2>
-        <button onClick={toggleSidebar} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-dark)', display: 'block' }} className="mobile-close-btn">
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem', padding: '0.5rem' }}>
+        <img src="/aiforlife-bhxh-daklak/logo-bhxh.png" alt="BHXH Logo" style={{ width: '40px', height: '40px', background: '#fff', borderRadius: '50%', padding: '2px' }} />
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+           <h2 style={{ color: '#fff', fontSize: '1.1rem', fontWeight: '700', margin: 0, lineHeight: 1.2, textTransform: 'uppercase' }}>BHXH Đắk Lắk</h2>
+           <span style={{ fontSize: '0.75rem', opacity: 0.8 }}>Hệ thống quản lý</span>
+        </div>
+        <button onClick={toggleSidebar} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', display: 'block', marginLeft: 'auto' }} className="mobile-close-btn">
           <ChevronLeft size={24} />
         </button>
       </div>
 
-      <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1 }}>
+      <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', flex: 1 }}>
         {navItems.map((item) => (
           <NavLink 
             key={item.path} 
@@ -34,13 +41,12 @@ const Sidebar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
               alignItems: 'center',
               gap: '1rem',
               padding: '0.875rem 1rem',
-              borderRadius: '8px',
-              color: isActive ? '#fff' : 'var(--text-dark)',
-              background: isActive ? 'linear-gradient(135deg, var(--primary-color), var(--primary-light))' : 'transparent',
+              borderRadius: 'var(--border-radius)',
+              color: '#fff',
+              background: isActive ? 'var(--primary-light)' : 'transparent',
               textDecoration: 'none',
-              fontWeight: isActive ? '600' : '500',
-              transition: 'all 0.2s ease',
-              boxShadow: isActive ? '0 4px 12px rgba(11, 91, 156, 0.2)' : 'none'
+              fontWeight: isActive ? '600' : '400',
+              transition: 'background 0.2s ease',
             })}
           >
             {item.icon}
@@ -49,7 +55,7 @@ const Sidebar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
         ))}
       </nav>
 
-      <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid var(--glass-border)' }}>
+      <div style={{ marginTop: 'auto', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <button 
           onClick={toggleTheme}
           style={{
@@ -60,7 +66,7 @@ const Sidebar = ({ isOpen, toggleSidebar, theme, toggleTheme }) => {
             padding: '0.875rem 1rem',
             background: 'transparent',
             border: 'none',
-            color: 'var(--text-dark)',
+            color: '#fff',
             cursor: 'pointer',
             fontWeight: '500',
             textAlign: 'left'
