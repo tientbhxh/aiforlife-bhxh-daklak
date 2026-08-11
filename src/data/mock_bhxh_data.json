@@ -1,0 +1,58 @@
+[
+  {
+    "id": "040090001234",
+    "cccd": "040090001234",
+    "fullName": "NGUYỄN VĂN A",
+    "dob": "1990-01-01",
+    "gender": "Nam",
+    "address": "Phường Tân Lợi, Thành phố Buôn Ma Thuột, Tỉnh Đắk Lắk",
+    "bhxhCode": "4012345678",
+    "phone": "0901234567",
+    "participationMonths": 60,
+    "currentJob": "Nhân viên IT",
+    "employer": "Công ty TNHH Công nghệ ABC",
+    "healthInsuranceCode": "DN4401234567890"
+  },
+  {
+    "id": "040085004321",
+    "cccd": "040085004321",
+    "fullName": "TRẦN THỊ B",
+    "dob": "1985-05-15",
+    "gender": "Nữ",
+    "address": "Xã Hòa Đông, Huyện Krông Pắc, Tỉnh Đắk Lắk",
+    "bhxhCode": "4012345679",
+    "phone": "0912345678",
+    "participationMonths": 120,
+    "currentJob": "Giáo viên",
+    "employer": "Trường Tiểu học Nguyễn Viết Xuân",
+    "healthInsuranceCode": "HC4401234567891"
+  },
+  {
+    "id": "040095009876",
+    "cccd": "040095009876",
+    "fullName": "Y GHIÊ KĐÓH",
+    "dob": "1995-10-20",
+    "gender": "Nam",
+    "address": "Buôn Kmrơng Prông B, Xã Ea Tu, Thành phố Buôn Ma Thuột, Tỉnh Đắk Lắk",
+    "bhxhCode": "4012345680",
+    "phone": "0987654321",
+    "participationMonths": 36,
+    "currentJob": "Công nhân",
+    "employer": "Nhà máy Cà phê Trung Nguyên",
+    "healthInsuranceCode": "DN4401234567892"
+  },
+  {
+    "id": "040080005555",
+    "cccd": "040080005555",
+    "fullName": "LÊ VĂN C",
+    "dob": "1980-03-10",
+    "gender": "Nam",
+    "address": "Xã Ea Kênh, Huyện Krông Pắc, Tỉnh Đắk Lắk",
+    "bhxhCode": "4012345681",
+    "phone": "0971122334",
+    "participationMonths": 240,
+    "currentJob": "Bảo vệ",
+    "employer": "Công ty Bảo vệ Thăng Long",
+    "healthInsuranceCode": "DN4401234567893"
+  }
+]

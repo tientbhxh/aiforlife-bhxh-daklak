@@ -1,0 +1,185 @@
+﻿BẢN MÔ TẢ Ý TƯỞNG, GIẢI PHÁP DỰ THI
+1. Tên ý tưởng, giải pháp: Tên giải pháp dự thi: Ứng dụng AI trong giải quyết TTHC tại bộ phận 1 cửa ngành Bảo hiểm xã hội
+2. Lĩnh vực dự thi: AI trong cải cách hành chính và chính quyền số
+3. Tính cấp thiết 
+Trong những năm gần đây, ngành BHXH đang đẩy mạnh chuyển đổi số, cải cách thủ tục hành chính (TTHC) và nâng cao chất lượng phục vụ người dân, doanh nghiệp. Tuy nhiên, tại Bộ phận Một cửa của cơ quan BHXH trên địa bàn tỉnh Đắk Lắk, đặc biệt ở các huyện vùng sâu, vùng xa, vùng đồng bào dân tộc thiểu số và khu vực biên giới, việc tiếp nhận hồ sơ vẫn còn gặp nhiều khó khăn.
+Thực tế cho thấy, khi thực hiện các TTHC như giải quyết chế độ BHXH một lần, trợ cấp, bảo hiểm thất nghiệp hoặc các thủ tục liên quan đến BHXH, BHYT, người dân thường phải tự kê khai nhiều biểu mẫu như mẫu 14-HSB, mẫu 09-HSB và các biểu mẫu khác theo quy định. Các biểu mẫu này có nhiều trường thông tin cá nhân như họ tên, ngày tháng năm sinh, số định danh cá nhân/căn cước công dân (ĐDCN/CCCD), địa chỉ, số điện thoại, thông tin tham gia BHXH... Trong khi đó, phần lớn các thông tin này đã được ngành BHXH quản lý trong cơ sở dữ liệu.
+Việc người dân phải ghi chép thủ công nhiều lần không chỉ mất thời gian mà còn dễ xảy ra sai sót như ghi thiếu thông tin, sai số ĐDCN/CCCD, sai địa chỉ hoặc thông tin không thống nhất với dữ liệu đang quản lý. Khi đó, cán bộ tiếp nhận phải kiểm tra, đối chiếu, hướng dẫn người dân chỉnh sửa hoặc nhập lại dữ liệu, làm tăng thời gian xử lý hồ sơ, ảnh hưởng đến hiệu quả giải quyết TTHC.
+Đối với tỉnh Đắk Lắk, địa bàn rộng, nhiều xã vùng sâu, vùng xa, trình độ tiếp cận công nghệ của một bộ phận người dân còn hạn chế; nhiều người lớn tuổi hoặc đồng bào dân tộc thiểu số gặp khó khăn khi tự điền biểu mẫu hành chính. Vì vậy, nhu cầu có một công cụ hỗ trợ tự động hóa việc kê khai hồ sơ là rất cần thiết, góp phần giảm áp lực cho cán bộ tiếp nhận và nâng cao trải nghiệm của người dân khi đến giao dịch.
+Bên cạnh đó, trong quá trình tiếp nhận hồ sơ, cán bộ thường xuyên phải giải đáp nhiều câu hỏi lặp đi lặp lại liên quan đến chính sách BHXH, BHYT và bảo hiểm thất nghiệp như điều kiện hưởng, mức hưởng, hồ sơ cần chuẩn bị, thời gian giải quyết hoặc quy trình thực hiện. Việc tư vấn trực tiếp chiếm nhiều thời gian, đặc biệt vào thời điểm lượng người đến giao dịch đông, trong khi phần lớn các câu hỏi đều có nội dung phổ biến và có thể được hỗ trợ bằng công nghệ AI.
+Xuất phát từ thực tiễn trên, ý tưởng "Ứng dụng AI trong giải quyết TTHC tại Bộ phận Một cửa ngành BHXH" được hình thành với mục tiêu ứng dụng AI để hỗ trợ tự động điền thông tin vào các biểu mẫu hành chính thông qua việc quét mã QR trên Căn cước công dân và đối chiếu với cơ sở dữ liệu của ngành BHXH. Đồng thời, tích hợp trợ lý AI hỗ trợ hỏi đáp các nội dung cơ bản về BHXH, BHYT và bảo hiểm thất nghiệp, giúp người dân dễ dàng tiếp cận thông tin chính xác, giảm thời gian chờ đợi và góp phần nâng cao chất lượng phục vụ.
+Giải pháp hướng đến mục tiêu xây dựng nền hành chính hiện đại, lấy người dân làm trung tâm phục vụ, giảm giấy tờ, giảm thao tác thủ công, hạn chế sai sót trong kê khai hồ sơ, nâng cao hiệu quả làm việc của cán bộ và góp phần thực hiện thành công chương trình chuyển đổi số, cải cách TTHC của ngành BHXH trên địa bàn tỉnh Đắk Lắk.
+4. Mô tả ý tưởng, giải pháp
+a. Nội dung chính của giải pháp 
+Ý tưởng "Ứng dụng AI trong giải quyết TTHC tại Bộ phận Một cửa ngành BHXH" là một giải pháp ứng dụng trí tuệ nhân tạo (AI) kết hợp với cơ sở dữ liệu của ngành BHXH nhằm hỗ trợ cán bộ tiếp nhận hồ sơ và người dân trong quá trình thực hiện TTHC. Giải pháp hướng đến mục tiêu tự động hóa các thao tác kê khai thông tin, giảm thời gian xử lý hồ sơ, hạn chế sai sót và nâng cao chất lượng phục vụ.
+Giải pháp gồm hai phân hệ chính:
+*Phân hệ AI hỗ trợ tiếp nhận hồ sơ và tự động điền biểu mẫu
+Khi người dân đến thực hiện TTHC tại Bộ phận Một cửa, cán bộ tiếp nhận sử dụng ứng dụng để quét mã QR trên Căn cước công dân. Sau khi xác thực thông tin định danh, hệ thống tự động kết nối và đối chiếu với cơ sở dữ liệu của ngành BHXH để truy xuất các thông tin đã được quản lý như: họ và tên, ngày tháng năm sinh, giới tính, số ĐDCN/CCCD, địa chỉ, mã số BHXH, quá trình tham gia và các thông tin liên quan theo từng thủ tục.
+Dựa trên dữ liệu đã được đối chiếu, hệ thống sử dụng AI để tự động nhận diện loại thủ tục đang thực hiện và điền toàn bộ các trường thông tin phù hợp vào các biểu mẫu tương ứng như mẫu 14-HSB, mẫu 09-HSB và các biểu mẫu khác theo quy định.
+Sau khi hoàn thành việc điền biểu mẫu, giao diện sẽ hiển thị bản xem trước để người dân và cán bộ cùng kiểm tra. Trong trường hợp có thông tin cần cập nhật hoặc điều chỉnh, người dân có thể chỉnh sửa trực tiếp trước khi xác nhận. Sau khi hoàn tất, hệ thống xuất biểu mẫu theo đúng quy định để in hoặc thực hiện ký số, sẵn sàng đưa vào quy trình giải quyết hồ sơ.
+Bên cạnh việc tự động điền biểu mẫu, AI còn hỗ trợ kiểm tra tính đầy đủ và hợp lệ của dữ liệu, phát hiện các trường thông tin còn thiếu hoặc chưa thống nhất với dữ liệu đang quản lý, từ đó đưa ra cảnh báo để cán bộ xử lý ngay trong quá trình tiếp nhận, góp phần hạn chế việc phải bổ sung hồ sơ nhiều lần.
+* Phân hệ Trợ lý AI tư vấn chính sách BHXH
+Giải pháp tích hợp một Chatbot AI được xây dựng trên cơ sở dữ liệu văn bản pháp luật, quy trình nghiệp vụ và hệ thống hỏi đáp của ngành BHXH.
+Người dân có thể trao đổi trực tiếp với trợ lý AI bằng ngôn ngữ tự nhiên để được giải đáp các câu hỏi phổ biến liên quan đến BHXH, BHYT và bảo hiểm thất nghiệp như: điều kiện hưởng chế độ, thành phần hồ sơ, quy trình thực hiện, thời hạn giải quyết, mức hưởng, nơi nộp hồ sơ và các quy định thường gặp.
+Đối với cán bộ Bộ phận Một cửa, Chatbot AI đóng vai trò là công cụ hỗ trợ tra cứu nhanh các quy định, biểu mẫu và hướng dẫn nghiệp vụ, góp phần giảm thời gian tìm kiếm tài liệu và nâng cao hiệu quả giải quyết công việc.
+Thông qua hai phân hệ trên, giải pháp hình thành một quy trình tiếp nhận hồ sơ thông minh: xác thực thông tin – đối chiếu dữ liệu – tự động điền biểu mẫu – kiểm tra tính hợp lệ – xác nhận – xuất biểu mẫu – ký số, đồng thời cung cấp kênh hỗ trợ hỏi đáp chính sách 24/7 cho người dân. Giải pháp tận dụng dữ liệu số sẵn có của ngành BHXH kết hợp với công nghệ AI để giảm thao tác thủ công, nâng cao chất lượng phục vụ, góp phần thực hiện hiệu quả mục tiêu chuyển đổi số và cải cách TTHC của ngành BHXH.
+b. Ứng dụng AI trong giải pháp 
+Giải pháp ứng dụng nhiều công nghệ AI (AI) nhằm tự động hóa quy trình tiếp nhận hồ sơ, hỗ trợ cán bộ nghiệp vụ và nâng cao trải nghiệm của người dân khi thực hiện TTHC tại Bộ phận Một cửa ngành BHXH.
+1. AI OCR (Optical Character Recognition) kết hợp Computer Vision
+Ứng dụng sử dụng công nghệ nhận dạng ký tự quang học (OCR) kết hợp với thị giác máy tính (Computer Vision) để nhận diện và trích xuất thông tin từ Căn cước công dân.
+Hệ thống ưu tiên quét mã QR trên CCCD để lấy thông tin định danh. Trong trường hợp mã QR không thể đọc được do mờ, rách hoặc hư hỏng, AI OCR sẽ tự động nhận dạng các trường thông tin trên mặt trước của CCCD như họ và tên, số ĐDCN/CCCD, ngày sinh, giới tính, địa chỉ... giúp đảm bảo quá trình tiếp nhận hồ sơ không bị gián đoạn.
+Đồng thời, công nghệ Computer Vision hỗ trợ tự động phát hiện vị trí CCCD, điều chỉnh góc nghiêng, xử lý ảnh mờ, cân bằng ánh sáng và nâng cao chất lượng hình ảnh trước khi thực hiện nhận dạng, góp phần tăng độ chính xác của dữ liệu đầu vào.
+2. AI đối chiếu và kiểm tra dữ liệu
+Sau khi thu nhận thông tin từ CCCD, hệ thống thực hiện đối chiếu với cơ sở dữ liệu của ngành BHXH để xác minh tính chính xác và đồng nhất của thông tin.
+AI hỗ trợ phát hiện các trường hợp dữ liệu chưa thống nhất, thiếu thông tin hoặc có dấu hiệu sai lệch giữa dữ liệu trên CCCD và dữ liệu đang được quản lý. Trên cơ sở đó, hệ thống đưa ra cảnh báo hoặc gợi ý để cán bộ kiểm tra và xử lý ngay trong quá trình tiếp nhận hồ sơ, hạn chế việc người dân phải bổ sung hồ sơ nhiều lần.
+3. AI tự động điền biểu mẫu hành chính
+Trên cơ sở dữ liệu đã được xác thực, AI tự động nhận diện các trường thông tin tương ứng trong từng biểu mẫu hành chính như mẫu 14-HSB, mẫu 09-HSB và các biểu mẫu khác theo quy định, sau đó tự động điền dữ liệu vào đúng vị trí.
+Việc tự động hóa này giúp giảm đáng kể thời gian kê khai, hạn chế sai sót do nhập liệu thủ công, đồng thời đảm bảo tính thống nhất giữa biểu mẫu và dữ liệu đang được ngành BHXH quản lý.
+4. AI Chatbot hỗ trợ tư vấn chính sách
+Giải pháp tích hợp trợ lý AI sử dụng công nghệ xử lý ngôn ngữ tự nhiên (Natural Language Processing - NLP) và mô hình ngôn ngữ lớn (Large Language Model - LLM) để giao tiếp với người dân bằng tiếng Việt thông dụng.
+Người dân có thể đặt câu hỏi về BHXH, BHYT và bảo hiểm thất nghiệp như điều kiện hưởng chế độ, hồ sơ cần chuẩn bị, mức hưởng, thời gian giải quyết hoặc các quy định liên quan. AI sẽ phân tích nội dung câu hỏi, tìm kiếm thông tin trong cơ sở tri thức được xây dựng từ văn bản quy phạm pháp luật, quy trình nghiệp vụ và tài liệu hướng dẫn của ngành BHXH để đưa ra câu trả lời nhanh chóng, dễ hiểu và phù hợp với từng tình huống.
+Đối với cán bộ tiếp nhận, Chatbot AI cũng là công cụ hỗ trợ tra cứu nhanh quy định, biểu mẫu và hướng dẫn nghiệp vụ, góp phần giảm thời gian tìm kiếm tài liệu và nâng cao hiệu quả xử lý công việc.
+Việc kết hợp các công nghệ AI nêu trên giúp hình thành một quy trình tiếp nhận hồ sơ thông minh, từ khâu nhận diện thông tin, đối chiếu dữ liệu, tự động điền biểu mẫu đến hỗ trợ tư vấn chính sách, góp phần nâng cao chất lượng phục vụ người dân, giảm thời gian xử lý hồ sơ và thúc đẩy chuyển đổi số trong ngành BHXH.
+c. Dữ liệu dự kiến sử dụng 
+1. Dữ liệu từ Căn cước công dân (CCCD)
+Thông qua việc quét mã QR hoặc áp dụng công nghệ AI OCR để nhận dạng thông tin trên CCCD, hệ thống thu nhận các dữ liệu định danh cơ bản như: họ và tên, số ĐDCN/CCCD, ngày tháng năm sinh, giới tính, địa chỉ thường trú và các thông tin cần thiết khác phục vụ việc xác thực danh tính người dân.
+Đây là dữ liệu đầu vào để thực hiện đối chiếu với cơ sở dữ liệu của ngành BHXH trước khi tự động điền vào các biểu mẫu hành chính.
+2. Cơ sở dữ liệu nghiệp vụ của ngành BHXH
+Giải pháp khai thác các thông tin đã được ngành BHXH quản lý theo đúng thẩm quyền và quy định hiện hành nhằm phục vụ việc tự động điền biểu mẫu, bao gồm:
+- Mã số BHXH.
+- Thông tin cá nhân của người tham gia.
+- Quá trình tham gia BHXH, BHYT, bảo hiểm thất nghiệp.
+- Thông tin về đơn vị sử dụng lao động (nếu có).
+- Các dữ liệu nghiệp vụ khác phục vụ giải quyết TTHC.
+Việc sử dụng dữ liệu chỉ nhằm hỗ trợ cán bộ tiếp nhận và người dân trong quá trình kê khai hồ sơ, không làm thay đổi hoặc phát sinh dữ liệu mới trong hệ thống quản lý của ngành.
+3. Cơ sở dữ liệu biểu mẫu và TTHC
+Hệ thống sử dụng bộ biểu mẫu hành chính, quy trình nghiệp vụ và danh mục TTHC do ngành BHXH ban hành để xác định loại hồ sơ, tự động ánh xạ dữ liệu vào đúng trường thông tin của từng biểu mẫu như mẫu 14-HSB, mẫu 09-HSB và các biểu mẫu khác theo quy định.
+4. Cơ sở tri thức phục vụ Trợ lý AI
+Chatbot AI được xây dựng trên cơ sở dữ liệu gồm:
+- Luật BHXH, Luật Bảo hiểm y tế, Luật Việc làm và các văn bản hướng dẫn thi hành.
+- Quy trình nghiệp vụ, quy trình giải quyết TTHC của ngành BHXH.
+- Bộ câu hỏi - đáp (FAQ), tài liệu hướng dẫn người dân và các văn bản hướng dẫn nghiệp vụ được phép khai thác.
+- Các văn bản mới được cập nhật để bảo đảm nội dung tư vấn phù hợp với quy định hiện hành.
+Nguồn dữ liệu này giúp AI trả lời các câu hỏi phổ biến của người dân một cách nhanh chóng, thống nhất và dễ hiểu.
+5. Nguyên tắc quản lý và bảo mật dữ liệu
+Giải pháp được xây dựng trên nguyên tắc bảo đảm an toàn thông tin và bảo vệ dữ liệu cá nhân theo quy định của pháp luật. Việc truy cập và khai thác dữ liệu chỉ được thực hiện khi phục vụ giải quyết TTHC, trên cơ sở phân quyền người sử dụng và sự đồng ý của người dân theo quy định. Dữ liệu được truyền và lưu trữ bằng các cơ chế bảo mật phù hợp, đồng thời toàn bộ thao tác khai thác được ghi nhận để phục vụ công tác kiểm tra, giám sát và bảo đảm an toàn hệ thống.
+d. Công nghệ dự kiến sử dụng 
+- Công nghệ AI OCR (Optical Character Recognition)
+- Công nghệ Computer Vision
+- Mô hình AI (AI) và Mô hình ngôn ngữ lớn (LLM)
+- Công nghệ RAG (Retrieval-Augmented Generation)
+- Công nghệ kết nối và chia sẻ dữ liệu
+-  Công nghệ ký số và quản lý biểu mẫu điện tử
+- Công nghệ bảo mật và an toàn thông tin
+5. Đối tượng và phạm vi áp dụng 
+a. Đối tượng sử dụng
+Giải pháp "Ứng dụng AI trong giải quyết TTHC tại Bộ phận Một cửa ngành BHXH" hướng đến nhiều nhóm đối tượng sử dụng, cụ thể như sau:
+1. Cán bộ, công chức, viên chức ngành BHXH
+Đây là nhóm đối tượng sử dụng chính của hệ thống tại Bộ phận Một cửa và các bộ phận nghiệp vụ có liên quan. Ứng dụng hỗ trợ cán bộ trong việc tiếp nhận hồ sơ, xác thực thông tin, đối chiếu dữ liệu, tự động điền biểu mẫu, kiểm tra tính đầy đủ của hồ sơ và hỗ trợ tra cứu nhanh các quy định, quy trình nghiệp vụ. Qua đó giúp giảm khối lượng công việc thủ công, nâng cao năng suất và chất lượng phục vụ.
+2. Người dân thực hiện TTHC
+Người dân là đối tượng thụ hưởng trực tiếp của giải pháp. Thông qua việc quét Căn cước công dân, hệ thống tự động điền thông tin vào các biểu mẫu hành chính, giúp người dân không phải kê khai lặp lại các thông tin đã có trong cơ sở dữ liệu của ngành BHXH. Đồng thời, người dân có thể sử dụng Trợ lý AI để tra cứu thông tin, tìm hiểu chính sách và được hướng dẫn thực hiện các thủ tục BHXH, BHYT, bảo hiểm thất nghiệp một cách nhanh chóng, thuận tiện.
+3. Doanh nghiệp, đơn vị sử dụng lao động
+Các doanh nghiệp và đơn vị sử dụng lao động khi thực hiện các thủ tục liên quan đến BHXH cho người lao động cũng có thể khai thác hệ thống để được hỗ trợ tra cứu quy định, hướng dẫn hồ sơ và thực hiện các TTHC nhanh hơn, góp phần giảm thời gian và chi phí thực hiện thủ tục.
+4. Cơ quan quản lý ngành BHXH
+Thông qua việc ứng dụng AI trong tiếp nhận và xử lý hồ sơ, cơ quan BHXH có thêm công cụ hỗ trợ chuẩn hóa quy trình nghiệp vụ, nâng cao chất lượng phục vụ, giảm sai sót trong quá trình tiếp nhận hồ sơ và từng bước xây dựng mô hình Bộ phận Một cửa thông minh, phù hợp với định hướng chuyển đổi số và cải cách TTHC.
+Nhìn chung, giải pháp được thiết kế theo hướng lấy người dân làm trung tâm phục vụ, đồng thời hỗ trợ hiệu quả cho đội ngũ cán bộ thực thi nhiệm vụ, góp phần nâng cao chất lượng cung cấp dịch vụ công của ngành BHXH.
+b. Phạm vi áp dụng
+Giải pháp được thiết kế theo hướng mở, có khả năng triển khai theo từng giai đoạn và dễ dàng mở rộng trên phạm vi toàn ngành BHXH.
+Giai đoạn 1: Triển khai thí điểm
+Giải pháp được triển khai thí điểm tại Bộ phận Một cửa của BHXH tỉnh Đắk Lắk và một số đơn vị BHXH cấp huyện có lượng hồ sơ giao dịch lớn. Trong giai đoạn này, hệ thống tập trung hỗ trợ các TTHC có tần suất thực hiện cao, như giải quyết BHXH một lần, tiếp nhận hồ sơ hưởng các chế độ BHXH, BHYT và các TTHC sử dụng biểu mẫu 14-HSB, 09-HSB cùng các biểu mẫu liên quan.
+Việc triển khai thí điểm nhằm đánh giá hiệu quả của giải pháp, mức độ hài lòng của người dân, khả năng đáp ứng yêu cầu nghiệp vụ và hoàn thiện hệ thống trước khi mở rộng phạm vi áp dụng.
+Giai đoạn 2: Mở rộng trên địa bàn tỉnh Đắk Lắk
+Sau khi hoàn thiện và đánh giá kết quả triển khai thí điểm, giải pháp có thể áp dụng tại tất cả Bộ phận Một cửa thuộc BHXH tỉnh Đắk Lắk.
+Giải pháp đặc biệt phù hợp với điều kiện thực tế của tỉnh Đắk Lắk - địa bàn rộng, nhiều xã vùng sâu, vùng xa, vùng đồng bào dân tộc thiểu số và khu vực biên giới - nơi người dân còn gặp nhiều khó khăn trong việc tiếp cận thông tin và thực hiện TTHC. Việc ứng dụng AI sẽ góp phần rút ngắn thời gian tiếp nhận hồ sơ, giảm số lần phải kê khai thông tin và nâng cao chất lượng phục vụ người dân.
+Giai đoạn 3: Nhân rộng trong toàn ngành
+Do giải pháp sử dụng dữ liệu, biểu mẫu và quy trình nghiệp vụ thống nhất của ngành BHXH, hệ thống có khả năng mở rộng để triển khai tại các cơ quan BHXH trên phạm vi toàn quốc mà không cần thay đổi lớn về mô hình hoạt động.
+Ngoài chức năng tự động điền biểu mẫu và hỗ trợ hỏi đáp chính sách, giải pháp có thể tiếp tục phát triển thêm các tính năng như hỗ trợ tiếp nhận nhiều loại TTHC khác, tra cứu tiến độ giải quyết hồ sơ, hướng dẫn chuẩn bị hồ sơ theo từng trường hợp cụ thể, phân tích dữ liệu phục vụ công tác quản lý và nâng cao chất lượng dịch vụ công.
+Với kiến trúc mở, khả năng tích hợp linh hoạt và định hướng lấy người dân làm trung tâm phục vụ, giải pháp có tính khả thi cao trong triển khai thực tế, phù hợp với mục tiêu chuyển đổi số, cải cách TTHC và xây dựng nền hành chính hiện đại của ngành BHXH.
+6. Hiệu quả dự kiến
+a. Hiệu quả về kinh tế - xã hội
+Việc triển khai "Ứng dụng AI trong giải quyết TTHC tại Bộ phận Một cửa ngành BHXH" dự kiến mang lại nhiều lợi ích thiết thực về kinh tế, xã hội và hiệu quả quản lý nhà nước, góp phần thúc đẩy chuyển đổi số và cải cách TTHC.
+Đối với người dân
+Giải pháp giúp người dân không phải kê khai lặp lại nhiều thông tin đã có trong cơ sở dữ liệu của ngành BHXH. Việc quét Căn cước công dân và tự động điền biểu mẫu giúp rút ngắn thời gian thực hiện thủ tục, giảm sai sót trong quá trình kê khai và hạn chế việc phải sửa đổi hoặc bổ sung hồ sơ.
+Bên cạnh đó, Trợ lý AI hỗ trợ người dân tra cứu thông tin, tìm hiểu chính sách BHXH, BHYT và bảo hiểm thất nghiệp mọi lúc, giúp nâng cao khả năng tiếp cận thông tin chính thống, đặc biệt đối với người dân ở khu vực vùng sâu, vùng xa, vùng đồng bào dân tộc thiểu số và khu vực biên giới của tỉnh Đắk Lắk.
+Đối với cơ quan BHXH
+Giải pháp góp phần giảm khối lượng công việc thủ công cho cán bộ tiếp nhận hồ sơ, đặc biệt ở các khâu nhập liệu, kiểm tra và đối chiếu thông tin. Thời gian tiếp nhận và xử lý hồ sơ được rút ngắn, giúp nâng cao năng suất làm việc và chất lượng phục vụ.
+Việc sử dụng dữ liệu được chuẩn hóa ngay từ khâu tiếp nhận cũng góp phần hạn chế sai sót, giảm tỷ lệ hồ sơ phải chỉnh sửa hoặc bổ sung, đồng thời tạo điều kiện để chuẩn hóa quy trình nghiệp vụ và nâng cao hiệu quả quản lý.
+Đối với xã hội
+Giải pháp góp phần xây dựng nền hành chính công hiện đại, minh bạch và lấy người dân làm trung tâm phục vụ. Việc ứng dụng AI trong tiếp nhận hồ sơ giúp nâng cao chất lượng dịch vụ công, tăng mức độ hài lòng của người dân và doanh nghiệp khi giao dịch với cơ quan BHXH.
+Đồng thời, việc giảm sử dụng giấy tờ, hạn chế thao tác thủ công và từng bước triển khai quy trình xử lý hồ sơ điện tử góp phần tiết kiệm chi phí xã hội, sử dụng hiệu quả nguồn lực và bảo vệ môi trường.
+Giải pháp cũng tạo tiền đề để mở rộng ứng dụng AI trong các lĩnh vực nghiệp vụ khác của ngành BHXH, góp phần thực hiện hiệu quả các mục tiêu chuyển đổi số quốc gia, cải cách TTHC và xây dựng chính quyền số.
+Hiệu quả lâu dài
+Với khả năng tích hợp trên nền tảng dữ liệu số của ngành BHXH, giải pháp không chỉ giải quyết những khó khăn hiện nay trong công tác tiếp nhận hồ sơ mà còn tạo nền tảng để phát triển các dịch vụ công thông minh trong tương lai. Khi được triển khai rộng rãi, giải pháp sẽ góp phần nâng cao hiệu quả hoạt động của cơ quan BHXH, giảm chi phí vận hành, nâng cao chất lượng phục vụ và tăng cường niềm tin của người dân đối với cơ quan nhà nước trong tiến trình chuyển đổi số.
+b. Khả năng áp dụng thực tế
+Giải pháp có tính khả thi cao do được xây dựng trên quy trình nghiệp vụ hiện hành của ngành BHXH và tận dụng các nguồn dữ liệu đã được quản lý. Hệ thống không làm thay đổi quy trình giải quyết TTHC mà đóng vai trò là công cụ hỗ trợ cán bộ trong các khâu tiếp nhận, đối chiếu dữ liệu, tự động điền biểu mẫu và hướng dẫn người dân.
+Các công nghệ được đề xuất như AI OCR, Computer Vision, Chatbot AI, mô hình ngôn ngữ lớn (LLM), RAG và kết nối API hiện đều đã phát triển ổn định, có thể tích hợp vào hệ thống phần mềm hiện có của ngành BHXH theo lộ trình phù hợp.
+Việc triển khai không đòi hỏi thay đổi lớn về hạ tầng kỹ thuật. Hệ thống có thể sử dụng trên máy tính tại Bộ phận Một cửa kết hợp với camera hoặc thiết bị quét mã QR, phù hợp với điều kiện triển khai tại BHXH tỉnh Đắk Lắk cũng như các đơn vị BHXH cấp huyện.
+Đối với người sử dụng, giao diện được thiết kế đơn giản, thân thiện, dễ thao tác. Cán bộ chỉ cần thực hiện một số bước cơ bản như quét CCCD, kiểm tra thông tin và xác nhận biểu mẫu, trong khi người dân không cần có kiến thức về công nghệ vẫn có thể sử dụng thuận tiện.
+c. Khả năng nhân rộng
+Giải pháp được xây dựng theo kiến trúc mở và có khả năng mở rộng linh hoạt.
+Do sử dụng các biểu mẫu, quy trình nghiệp vụ và dữ liệu thống nhất của ngành BHXH, hệ thống có thể triển khai tại tất cả các cơ quan BHXH trên địa bàn tỉnh Đắk Lắk và từng bước mở rộng trên phạm vi toàn quốc mà không cần thay đổi mô hình hoạt động.
+Ngoài các biểu mẫu 14-HSB và 09-HSB, giải pháp có thể mở rộng để hỗ trợ nhiều TTHC khác thuộc lĩnh vực BHXH, BHYT và bảo hiểm thất nghiệp. Đồng thời, Chatbot AI có thể liên tục được cập nhật cơ sở tri thức để đáp ứng các quy định pháp luật mới và mở rộng phạm vi tư vấn.
+Trong tương lai, hệ thống có thể tích hợp với các nền tảng số của Chính phủ và ngành BHXH như Cơ sở dữ liệu quốc gia về dân cư, ứng dụng VNeID, Cổng Dịch vụ công quốc gia, Cổng Dịch vụ công của ngành BHXH và các hệ thống nghiệp vụ khác (khi đáp ứng các điều kiện về kỹ thuật, pháp lý và kết nối dữ liệu). Điều này tạo nền tảng hình thành hệ sinh thái dịch vụ công thông minh, đồng bộ và hiện đại.
+d. Giá trị gia tăng của giải pháp
+Giải pháp mang lại giá trị gia tăng rõ rệt so với quy trình tiếp nhận hồ sơ truyền thống thông qua việc ứng dụng AI để tự động hóa các công việc lặp lại, giảm thao tác thủ công và nâng cao chất lượng phục vụ.
+Đối với người dân, giải pháp giúp giảm thời gian kê khai hồ sơ, hạn chế sai sót, giảm số lần phải chỉnh sửa hoặc bổ sung hồ sơ và tăng khả năng tiếp cận thông tin chính thống thông qua Trợ lý AI.
+Đối với cán bộ BHXH, giải pháp giúp giảm áp lực nhập liệu, tăng tốc độ tiếp nhận hồ sơ, chuẩn hóa dữ liệu ngay từ đầu vào và hỗ trợ tra cứu nhanh quy định, từ đó nâng cao năng suất lao động và chất lượng giải quyết TTHC.
+Đối với cơ quan BHXH, giải pháp góp phần thúc đẩy chuyển đổi số, nâng cao chất lượng dịch vụ công, tăng mức độ hài lòng của người dân, đồng thời tạo nguồn dữ liệu đầu vào chính xác và thống nhất phục vụ công tác quản lý.
+Điểm khác biệt của giải pháp là không chỉ ứng dụng AI để nhận dạng và tự động điền biểu mẫu, mà còn xây dựng Trợ lý AI có khả năng hỗ trợ hỏi đáp chính sách, hướng dẫn thủ tục và hỗ trợ cán bộ tra cứu nghiệp vụ trên cơ sở dữ liệu chính thống của ngành BHXH. Điều này giúp hình thành một mô hình Bộ phận Một cửa thông minh, trong đó AI đóng vai trò là công cụ hỗ trợ, còn cán bộ BHXH vẫn là người kiểm tra, xác nhận và quyết định cuối cùng trong quá trình giải quyết hồ sơ.
+Giải pháp không chỉ giải quyết nhu cầu trước mắt trong cải cách TTHC mà còn tạo nền tảng để tiếp tục phát triển các ứng dụng AI phục vụ hoạt động quản lý, điều hành và cung cấp dịch vụ công của ngành BHXH trong tương lai.
+7. Điều kiện triển khai 
+a. Yêu cầu về hạ tầng
+Giải pháp được thiết kế theo hướng tận dụng tối đa hạ tầng công nghệ thông tin hiện có của ngành BHXH, hạn chế phát sinh chi phí đầu tư mới.
+Để triển khai hệ thống, cần đáp ứng các điều kiện cơ bản sau:
+- Máy tính làm việc tại Bộ phận Một cửa có cấu hình đáp ứng yêu cầu vận hành phần mềm.
+- Thiết bị quét mã QR hoặc camera tích hợp để nhận diện thông tin trên Căn cước công dân.
+- Hệ thống mạng nội bộ và kết nối Internet ổn định phục vụ việc truy cập cơ sở dữ liệu và các dịch vụ AI.
+- Máy chủ hoặc nền tảng điện toán đám mây để triển khai hệ thống AI, lưu trữ cơ sở tri thức và vận hành Chatbot AI.
+- Hệ thống kết nối an toàn với cơ sở dữ liệu của ngành BHXH thông qua các cơ chế tích hợp và chia sẻ dữ liệu được cấp có thẩm quyền phê duyệt.
+Việc tận dụng hạ tầng công nghệ hiện có giúp giảm chi phí đầu tư, rút ngắn thời gian triển khai và tạo điều kiện thuận lợi để mở rộng trong tương lai.
+b. Yêu cầu về nhân lực
+Việc triển khai giải pháp không làm thay đổi cơ cấu tổ chức hiện có mà chủ yếu bổ sung công cụ hỗ trợ cho cán bộ thực hiện nhiệm vụ.
+Nguồn nhân lực tham gia triển khai gồm:
+- Đội ngũ cán bộ công nghệ thông tin thực hiện cài đặt, vận hành, quản trị và bảo trì hệ thống.
+- Cán bộ nghiệp vụ và cán bộ Bộ phận Một cửa tham gia kiểm thử, góp ý hoàn thiện chức năng và trực tiếp sử dụng hệ thống trong quá trình tiếp nhận hồ sơ.
+- Đội ngũ chuyên gia về AI (hoặc đơn vị cung cấp giải pháp) thực hiện xây dựng, huấn luyện, tối ưu mô hình AI và cập nhật cơ sở tri thức cho Chatbot AI.
+- Đội ngũ quản trị dữ liệu chịu trách nhiệm quản lý, cập nhật và bảo đảm chất lượng dữ liệu phục vụ vận hành hệ thống.
+Đồng thời, cần tổ chức tập huấn, hướng dẫn sử dụng cho cán bộ trước khi triển khai chính thức nhằm bảo đảm khai thác hiệu quả các tính năng của hệ thống.
+c. Điều kiện triển khai
+Để giải pháp có thể triển khai hiệu quả, cần bảo đảm các điều kiện sau:
+- Có chủ trương và sự đồng thuận của cơ quan BHXH trong việc thí điểm ứng dụng AI vào quy trình tiếp nhận hồ sơ.
+- Được kết nối, khai thác cơ sở dữ liệu của ngành BHXH theo đúng quy định về phân quyền, quản lý và sử dụng dữ liệu.
+- Có sự phối hợp giữa đơn vị nghiệp vụ, đơn vị công nghệ thông tin và đơn vị cung cấp giải pháp trong quá trình xây dựng, kiểm thử và hoàn thiện hệ thống.
+- Thực hiện triển khai theo lộ trình từ thí điểm đến mở rộng, bảo đảm đánh giá hiệu quả trước khi nhân rộng.
+- Thường xuyên cập nhật các biểu mẫu, quy trình nghiệp vụ và chính sách mới để bảo đảm hệ thống luôn phù hợp với quy định hiện hành.
+d. Điều kiện về an toàn và bảo mật thông tin
+Do hệ thống xử lý dữ liệu cá nhân và dữ liệu nghiệp vụ của ngành BHXH, việc bảo đảm an toàn thông tin là yêu cầu bắt buộc trong suốt quá trình triển khai và vận hành.
+Giải pháp dự kiến áp dụng các biện pháp sau:
+- Phân quyền truy cập theo chức năng, nhiệm vụ của từng nhóm người sử dụng.
+- Xác thực người dùng trước khi truy cập hệ thống.
+- Mã hóa dữ liệu trong quá trình truyền và lưu trữ nhằm bảo vệ thông tin cá nhân của người dân.
+- Ghi nhật ký (log) toàn bộ hoạt động truy cập, khai thác và xử lý dữ liệu để phục vụ công tác kiểm tra, giám sát và truy vết khi cần thiết.
+- Bảo đảm việc thu thập, khai thác và sử dụng dữ liệu tuân thủ các quy định của pháp luật về bảo vệ dữ liệu cá nhân, an toàn thông tin mạng và các quy định chuyên ngành của BHXH Việt Nam.
+- Đối với chức năng Chatbot AI, cơ sở tri thức được kiểm soát, cập nhật và rà soát thường xuyên nhằm bảo đảm nội dung trả lời đúng quy định, hạn chế tối đa việc cung cấp thông tin chưa chính xác hoặc đã hết hiệu lực.
+e. Điều kiện bảo đảm tính bền vững của giải pháp
+Giải pháp được xây dựng theo kiến trúc mở, dễ nâng cấp và mở rộng theo nhu cầu thực tế của ngành BHXH.
+Để bảo đảm tính bền vững, cần thực hiện các giải pháp sau:
+- Thường xuyên cập nhật cơ sở tri thức, văn bản quy phạm pháp luật, quy trình nghiệp vụ và biểu mẫu khi có thay đổi.
+- Bảo trì, nâng cấp phần mềm và mô hình AI định kỳ nhằm nâng cao hiệu quả hoạt động và đáp ứng yêu cầu mới.
+- Theo dõi, đánh giá hiệu quả vận hành thông qua phản hồi của người dân và cán bộ để liên tục cải tiến hệ thống.
+- Xây dựng cơ chế sao lưu, phục hồi dữ liệu và phương án dự phòng nhằm bảo đảm hệ thống hoạt động ổn định, liên tục.
+- Khuyến khích mở rộng phạm vi ứng dụng AI sang các lĩnh vực nghiệp vụ khác của ngành BHXH, từng bước hình thành hệ sinh thái dịch vụ công thông minh.
+Với việc tận dụng hạ tầng hiện có, kết hợp các công nghệ AI hiện đại và cơ chế cập nhật linh hoạt, giải pháp có khả năng duy trì hoạt động lâu dài, thích ứng với sự thay đổi của chính sách và yêu cầu quản lý, góp phần nâng cao chất lượng phục vụ người dân và thúc đẩy chuyển đổi số trong ngành BHXH.
+8. Tài liệu tham khảo
+1. Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam (2014), **Luật BHXH số 58/2014/QH13**.
+2. Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam (2024), **Luật BHXH số 41/2024/QH15**.
+3. Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam (2008, sửa đổi, bổ sung năm 2014), **Luật Bảo hiểm y tế**.
+4. Quốc hội nước Cộng hòa xã hội chủ nghĩa Việt Nam (2013), **Luật Việc làm số 38/2013/QH13**.
+5. Chính phủ, các nghị định và văn bản hướng dẫn thi hành Luật BHXH, Luật Bảo hiểm y tế và Luật Việc làm hiện hành.
+6. BHXH Việt Nam, hệ thống văn bản nghiệp vụ, quy trình tiếp nhận và giải quyết TTHC; các biểu mẫu, trong đó có mẫu 14-HSB, mẫu 09-HSB và các biểu mẫu liên quan.
+7. BHXH Việt Nam, tài liệu hướng dẫn về chuyển đổi số, cải cách TTHC và cung cấp dịch vụ công trực tuyến.
+8. Thủ tướng Chính phủ (2020), **Quyết định số 749/QĐ-TTg ngày 03/6/2020** phê duyệt *Chương trình Chuyển đổi số quốc gia đến năm 2025, định hướng đến năm 2030*.
+9. Thủ tướng Chính phủ, các chương trình, chiến lược và văn bản chỉ đạo về phát triển Chính phủ số, dữ liệu số, AI và cải cách TTHC.
+10. Các tài liệu nghiên cứu, giáo trình và công bố khoa học về AI (Artificial Intelligence), Nhận dạng ký tự quang học (AI OCR), Thị giác máy tính (Computer Vision), Xử lý ngôn ngữ tự nhiên (Natural Language Processing - NLP), Mô hình ngôn ngữ lớn (Large Language Models - LLM) và kỹ thuật Retrieval-Augmented Generation (RAG).
+11. Các tiêu chuẩn, quy định và hướng dẫn về an toàn thông tin, bảo vệ dữ liệu cá nhân và chuyển đổi số trong cơ quan nhà nước hiện hành.
+12. Cơ sở tri thức dự kiến xây dựng từ các văn bản quy phạm pháp luật, quy trình nghiệp vụ, tài liệu hướng dẫn và bộ câu hỏi – đáp chính thức của ngành BHXH phục vụ Trợ lý AI.
