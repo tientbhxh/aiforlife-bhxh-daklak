@@ -51,29 +51,25 @@ const Chatbot = () => {
         throw new Error(modelsData.error.message || 'Lỗi khi lấy danh sách mô hình');
       }
 
-      // Tìm mô hình flash hỗ trợ generateContent
+      // Tìm mô hình flash hỗ trợ generateContent, sắp xếp giảm dần (để lấy phiên bản mới nhất như 3.0, 3.5 thay vì 2.5)
       const availableModels = modelsData.models || [];
       const flashModels = availableModels.filter(m => 
         m.name.includes('flash') && 
         m.supportedGenerationMethods && 
         m.supportedGenerationMethods.includes('generateContent')
-      );
+      ).sort((a, b) => b.name.localeCompare(a.name));
 
-      // Nếu không có flash, lấy model bất kỳ có chữ gemini và hỗ trợ generateContent
       const fallbackModels = availableModels.filter(m => 
         m.name.includes('gemini') && 
         m.supportedGenerationMethods && 
         m.supportedGenerationMethods.includes('generateContent')
-      );
+      ).sort((a, b) => b.name.localeCompare(a.name));
 
-      const targetModel = flashModels.length > 0 ? flashModels[0] : (fallbackModels.length > 0 ? fallbackModels[0] : null);
+      const candidateModels = [...flashModels, ...fallbackModels];
 
-      if (!targetModel) {
+      if (candidateModels.length === 0) {
         throw new Error('Không tìm thấy mô hình AI nào khả dụng trên tài khoản của bạn.');
       }
-
-      // model.name đã có dạng "models/gemini-..."
-      const modelName = targetModel.name.replace('models/', '');
 
       // Chuẩn bị payload cho Gemini API
       const history = messages.map(m => ({
@@ -86,19 +82,39 @@ const Chatbot = () => {
         contents: [...history, { role: 'user', parts: [{ text: userMessage.content }] }]
       };
 
-      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
+      let success = false;
+      let responseData = null;
+      let lastError = null;
 
-      const data = await response.json();
-      
-      if (data.error) {
-        throw new Error(data.error.message || 'Lỗi từ Gemini API');
+      // Thử lần lượt các mô hình từ mới nhất xuống cũ nhất
+      for (const model of candidateModels) {
+        try {
+          const modelName = model.name.replace('models/', '');
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+          
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(data.error.message);
+          }
+          
+          responseData = data;
+          success = true;
+          break; // Thành công thì thoát vòng lặp
+        } catch (err) {
+          lastError = err;
+          console.warn(`Model ${model.name} failed:`, err);
+        }
       }
 
-      const botText = data.candidates[0].content.parts[0].text;
+      if (!success) {
+        throw new Error(lastError.message || 'Tất cả mô hình đều bị lỗi hoặc không được hỗ trợ.');
+      }
+
+      const botText = responseData.candidates[0].content.parts[0].text;
       setMessages(prev => [...prev, { role: 'model', content: botText }]);
     } catch (err) {
       console.error(err);
