@@ -7,19 +7,19 @@
   --primary-dark: #0d294a;
   --secondary-color: #e59d24; /* Golden accent */
   
-  --bg-light: #eaedf2; /* Light gray body background */
+  --bg-light: #f4f7fa; /* Softer light background */
   --bg-card: #ffffff;
-  --text-dark: #333333;
-  --text-muted: #666666;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
   
-  --success-color: #5cb85c;
-  --danger-color: #d9534f;
-  --warning-color: #f0ad4e;
+  --success-color: #10b981;
+  --danger-color: #ef4444;
+  --warning-color: #f59e0b;
   
   /* Layout */
-  --sidebar-width: 250px;
-  --header-height: 60px;
-  --border-radius: 4px; /* Squared corners for enterprise look */
+  --sidebar-width: 260px;
+  --header-height: 64px;
+  --border-radius: 12px; /* Softer rounded corners for modern look */
 }
 
 /* Dark Mode Support (optional, enterprise usually sticks to light) */
@@ -71,9 +71,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Utility Classes */
 .glass-panel {
   background: var(--bg-card);
-  border: 1px solid #d1d5db;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   border-radius: var(--border-radius);
+  transition: box-shadow 0.3s ease;
+}
+
+.glass-panel:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
 .btn {
@@ -92,12 +97,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   color: white;
+  box-shadow: 0 4px 12px rgba(27, 74, 129, 0.25);
+  border: none;
 }
 
 .btn-primary:hover {
-  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(27, 74, 129, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-outline {
@@ -112,19 +124,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .input-field {
   width: 100%;
-  padding: 0.6rem 0.8rem;
-  border-radius: var(--border-radius);
-  border: 1px solid #ccc;
-  background: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
   font-family: 'Inter', sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--text-dark);
+  transition: all 0.2s ease;
 }
 
 .input-field:focus {
   outline: none;
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 2px rgba(58, 107, 165, 0.2);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(58, 107, 165, 0.15);
 }
 
 /* Animations */
@@ -152,9 +166,9 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   z-index: 100;
-  background-color: var(--primary-color); /* Deep blue background */
+  background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
   color: white;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  box-shadow: 4px 0 15px rgba(0,0,0,0.05);
 }
 
 .main-content {
