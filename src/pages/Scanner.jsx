@@ -88,18 +88,20 @@ const Scanner = () => {
         <p className="text-slate-400 text-xs font-semibold tracking-widest uppercase mb-4">Dữ liệu Giả lập (Test Data)</p>
         <div className="flex gap-4 justify-center flex-wrap">
           <button 
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 border border-amber-400 text-white font-medium hover:from-amber-500 hover:to-orange-500 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all duration-300 transform hover:scale-105" 
+            className="group relative overflow-hidden flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 border border-white/10" 
             onClick={() => handleMockScan('040090001234')}
           >
-            <QrCode size={18} />
-            <span>Nguyễn Văn A</span>
+            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-shimmer"></div>
+            <QrCode size={18} className="relative z-10" />
+            <span className="relative z-10">Nguyễn Văn A</span>
           </button>
           <button 
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 border border-amber-400 text-white font-medium hover:from-amber-500 hover:to-orange-500 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all duration-300 transform hover:scale-105" 
+            className="group relative overflow-hidden flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 border border-white/10" 
             onClick={() => handleMockScan('040085004321')}
           >
-            <QrCode size={18} />
-            <span>Trần Thị B</span>
+            <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:animate-shimmer"></div>
+            <QrCode size={18} className="relative z-10" />
+            <span className="relative z-10">Trần Thị B</span>
           </button>
         </div>
       </div>
@@ -109,21 +111,22 @@ const Scanner = () => {
         #reader { border: none !important; }
         #reader__dashboard_section_csr span { color: #94a3b8 !important; }
         #reader button { 
-          background: #0f172a;
-          color: #fbbf24; /* amber-400 */
-          border: 1px solid #78350f; /* amber-900 */
+          background: #1e293b;
+          color: #e2e8f0; 
+          border: 1px solid #334155; 
           padding: 8px 16px;
-          border-radius: 8px;
+          border-radius: 9999px;
           cursor: pointer;
           margin: 4px;
           transition: all 0.3s ease;
           font-weight: 500;
         }
         #reader button:hover {
-          border-color: #f59e0b; /* amber-500 */
-          box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+          border-color: #38bdf8; 
+          background: #38bdf8;
+          color: white;
         }
-        #reader a { color: #fbbf24 !important; }
+        #reader a { color: #38bdf8 !important; }
       `}</style>
     </div>
   );

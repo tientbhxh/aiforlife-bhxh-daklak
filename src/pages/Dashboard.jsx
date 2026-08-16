@@ -5,21 +5,21 @@ import Chatbot from './Chatbot';
 const Dashboard = () => {
   return (
     <div className="w-full h-[calc(100vh-140px)] flex flex-col lg:flex-row gap-6">
-      {/* Left Pane - QR Scanner (Amber) */}
-      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-amber-900/80 border-2 border-amber-400/60 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(245,158,11,0.3)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(245,158,11,0.5)] hover:border-amber-400">
-        <div className="p-4 border-b-2 border-amber-400/60 bg-amber-800/80 flex items-center gap-3">
-          <h2 className="text-xl font-bold text-white tracking-wide glow-text-amber">Hệ thống Nhận diện (QR)</h2>
+      {/* Left Pane - QR Scanner */}
+      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-[#131b2f] border border-slate-700/50 rounded-2xl overflow-hidden shadow-lg shadow-black/20 transition-all duration-300 hover:border-slate-600">
+        <div className="p-5 border-b border-slate-700/50 flex items-center gap-3">
+          <h2 className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Hệ thống Nhận diện (QR)</h2>
         </div>
         <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
           <Scanner />
         </div>
       </div>
 
-      {/* Right Pane - Chatbot AI (Emerald) */}
-      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-emerald-900/80 border-2 border-emerald-400/60 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(16,185,129,0.5)] hover:border-emerald-400">
-        <div className="p-4 border-b-2 border-emerald-400/60 bg-emerald-800/80 flex items-center justify-between">
+      {/* Right Pane - Chatbot AI */}
+      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-[#131b2f] border border-slate-700/50 rounded-2xl overflow-hidden shadow-lg shadow-black/20 transition-all duration-300 hover:border-slate-600">
+        <div className="p-5 border-b border-slate-700/50 flex items-center justify-between">
           <div>
-            <h2 className="text-xl font-bold text-white tracking-wide glow-text-emerald">Trợ lý AI Phân tích</h2>
+            <h2 className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Trợ lý AI Phân tích</h2>
           </div>
           <div className="flex items-center gap-2">
             <span className="relative flex h-3 w-3">

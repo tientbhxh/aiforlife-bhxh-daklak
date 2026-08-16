@@ -20,17 +20,22 @@ const Layout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 dark:bg-slate-900 bg-grid-pattern relative flex flex-col text-slate-200 font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-[#0B1120] dark:bg-[#0B1120] relative flex flex-col text-slate-200 font-sans transition-colors duration-300 overflow-x-hidden">
       
+      {/* Background Radial Glow */}
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-900/20 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[150px] pointer-events-none"></div>
+
       {/* HEADER */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-slate-900/80 border-b border-cyan-500/30 shadow-[0_4px_30px_rgba(34,211,238,0.15)]">
+      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-[#0B1120]/80 border-b border-slate-700/50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-slate-900 border border-cyan-500/50 flex items-center justify-center group-hover:glow-border transition-all duration-300 overflow-hidden">
-              <img src="/aiforlife-bhxh-daklak/logo-bhxh.png" alt="Logo" className="w-8 h-8 object-contain" />
+          <Link to="/" className="flex items-center gap-3 group relative">
+            <div className="w-10 h-10 rounded-full bg-[#131b2f] border border-cyan-500/30 flex items-center justify-center transition-all duration-300 overflow-hidden relative group-hover:border-cyan-400">
+              <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-shimmer"></div>
+              <img src="/aiforlife-bhxh-daklak/logo-bhxh.png" alt="Logo" className="w-8 h-8 object-contain z-10" />
             </div>
             <div>
-              <h1 className="text-white font-bold text-lg tracking-wide uppercase group-hover:text-cyan-400 transition-colors duration-300 glow-text">BHXH Đắk Lắk</h1>
+              <h1 className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 hidden sm:block">BHXH Đắk Lắk</h1>
               <p className="text-xs text-cyan-500/80 uppercase tracking-widest font-semibold">AI SaaS System</p>
             </div>
           </Link>
