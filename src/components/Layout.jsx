@@ -27,27 +27,27 @@ const Layout = () => {
       <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-200/40 dark:bg-blue-900/20 rounded-full blur-[150px] pointer-events-none"></div>
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-[#0B1120]/80 border-b border-slate-200 dark:border-slate-700/50 shadow-sm">
+      <header className="sticky top-0 z-50 w-full bg-blue-700 dark:bg-[#0B1120]/80 dark:backdrop-blur-md border-b border-blue-800 dark:border-slate-700/50 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group relative">
-            <div className="w-10 h-10 rounded-full bg-white dark:bg-[#131b2f] border border-slate-200 dark:border-cyan-500/30 flex items-center justify-center transition-all duration-300 overflow-hidden relative group-hover:border-cyan-400">
+            <div className="w-10 h-10 rounded-full bg-white dark:bg-[#131b2f] border border-blue-500 dark:border-cyan-500/30 flex items-center justify-center transition-all duration-300 overflow-hidden relative group-hover:border-cyan-200 dark:group-hover:border-cyan-400">
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 dark:via-white/20 to-transparent group-hover:animate-shimmer"></div>
               <img src="/aiforlife-bhxh-daklak/logo-bhxh.png" alt="Logo" className="w-8 h-8 object-contain z-10" />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 hidden sm:block">BHXH Đắk Lắk</h1>
-              <p className="text-xs text-blue-600/80 dark:text-cyan-500/80 uppercase tracking-widest font-semibold">AI SaaS System</p>
+              <h1 className="text-xl font-bold tracking-wider text-white dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500 hidden sm:block">BHXH Đắk Lắk</h1>
+              <p className="text-xs text-blue-200 dark:text-cyan-500/80 uppercase tracking-widest font-semibold">AI SaaS System</p>
             </div>
           </Link>
 
           <div className="flex items-center gap-6">
             <nav className="hidden md:flex items-center gap-6">
-              <Link to="/" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors duration-300">Trang chủ</Link>
-              <Link to="/settings" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors duration-300">Cài đặt API</Link>
+              <Link to="/" className="text-sm font-medium text-blue-100 dark:text-slate-300 hover:text-white dark:hover:text-cyan-400 transition-colors duration-300">Trang chủ</Link>
+              <Link to="/settings" className="text-sm font-medium text-blue-100 dark:text-slate-300 hover:text-white dark:hover:text-cyan-400 transition-colors duration-300">Cài đặt API</Link>
             </nav>
             <button 
               onClick={toggleTheme}
-              className="p-2 rounded-full border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-cyan-500 hover:text-blue-600 dark:hover:text-cyan-400 text-slate-500 dark:text-slate-400 transition-all duration-300 bg-white dark:bg-slate-900"
+              className="p-2 rounded-full border border-blue-500 dark:border-slate-700 hover:border-blue-300 dark:hover:border-cyan-500 hover:text-white dark:hover:text-cyan-400 text-blue-200 dark:text-slate-400 transition-all duration-300 bg-blue-800 dark:bg-slate-900"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
