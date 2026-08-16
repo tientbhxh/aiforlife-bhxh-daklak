@@ -26,6 +26,11 @@
     border: 1px solid rgba(16, 185, 129, 0.8);
   }
 
+  .glow-border-amber {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5), inset 0 0 15px rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.8);
+  }
+
   .glow-text {
     text-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
   }
@@ -36,6 +41,10 @@
 
   .glow-text-emerald {
     text-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+  }
+
+  .glow-text-amber {
+    text-shadow: 0 0 12px rgba(245, 158, 11, 0.8);
   }
 }
 

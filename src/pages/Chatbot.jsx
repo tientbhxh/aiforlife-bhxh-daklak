@@ -120,7 +120,7 @@ const Chatbot = ({ embedded = false }) => {
       {!embedded && (
         <div className="mb-6">
           <h2 className="text-2xl font-bold text-white glow-text mb-2">Trợ lý AI Tự động</h2>
-          <p className="text-cyan-500/80">Hỏi đáp nhanh các quy định về BHXH, BHYT, BHTN.</p>
+          <p className="text-emerald-500/80">Hỏi đáp nhanh các quy định về BHXH, BHYT, BHTN.</p>
         </div>
       )}
 
@@ -131,19 +131,19 @@ const Chatbot = ({ embedded = false }) => {
         </div>
       )}
 
-      <div className={`flex flex-col flex-1 overflow-hidden ${!embedded ? 'bg-slate-900/50 border border-cyan-500/20 rounded-xl backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.3)]' : ''}`}>
+      <div className={`flex flex-col flex-1 overflow-hidden ${!embedded ? 'bg-slate-900/50 border border-emerald-500/20 rounded-xl backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.3)]' : ''}`}>
         {/* Chat History */}
         <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 custom-scrollbar">
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end' : 'self-start'}`}>
               {msg.role === 'model' && (
-                <div className="w-8 h-8 rounded-full bg-cyan-900 border border-cyan-500/50 flex items-center justify-center text-cyan-400 shrink-0 shadow-[0_0_10px_rgba(34,211,238,0.2)]">
+                <div className="w-8 h-8 rounded-full bg-emerald-900 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shrink-0 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
                   <Bot size={16} />
                 </div>
               )}
               
               <div className={`p-3 rounded-2xl ${msg.role === 'user' 
-                ? 'bg-cyan-600 text-white rounded-tr-sm shadow-[0_0_15px_rgba(8,145,178,0.4)]' 
+                ? 'bg-emerald-600 text-white rounded-tr-sm shadow-[0_0_15px_rgba(16,185,129,0.4)]' 
                 : 'bg-slate-800/80 border border-slate-700 text-slate-300 rounded-tl-sm shadow-inner'
               }`}>
                 {msg.role === 'user' ? (
@@ -165,11 +165,11 @@ const Chatbot = ({ embedded = false }) => {
           
           {isLoading && (
             <div className="flex gap-3 self-start">
-               <div className="w-8 h-8 rounded-full bg-cyan-900 border border-cyan-500/50 flex items-center justify-center text-cyan-400 animate-pulse">
+               <div className="w-8 h-8 rounded-full bg-emerald-900 border border-emerald-500/50 flex items-center justify-center text-emerald-400 animate-pulse">
                   <Bot size={16} />
                 </div>
                 <div className="bg-slate-800/80 border border-slate-700 p-3 rounded-2xl rounded-tl-sm flex items-center gap-2">
-                  <Loader2 className="animate-spin text-cyan-400" size={16} />
+                  <Loader2 className="animate-spin text-emerald-400" size={16} />
                   <span className="text-slate-400 text-sm">Đang phân tích dữ liệu...</span>
                 </div>
             </div>
@@ -178,11 +178,11 @@ const Chatbot = ({ embedded = false }) => {
         </div>
 
         {/* Input form */}
-        <div className="p-3 border-t border-cyan-400/40 bg-slate-800">
+        <div className="p-3 border-t border-emerald-400/40 bg-slate-800">
           <form onSubmit={handleSend} className="flex gap-3">
             <input 
               type="text" 
-              className="flex-1 bg-slate-900 border border-cyan-500/30 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all" 
+              className="flex-1 bg-slate-900 border border-emerald-500/30 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-emerald-400 focus:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition-all" 
               placeholder="Nhập câu hỏi hoặc truy vấn..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -190,7 +190,7 @@ const Chatbot = ({ embedded = false }) => {
             />
             <button 
               type="submit" 
-              className="bg-gradient-to-r from-cyan-600 to-blue-600 border border-cyan-400 hover:from-cyan-500 hover:to-blue-500 text-white px-5 py-3 rounded-xl flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transform hover:scale-105" 
+              className="bg-gradient-to-r from-emerald-600 to-teal-600 border border-emerald-400 hover:from-emerald-500 hover:to-teal-500 text-white px-5 py-3 rounded-xl flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_20px_rgba(16,185,129,0.6)] transform hover:scale-105" 
               disabled={isLoading || !input.trim()}
             >
               <Send size={20} />

@@ -88,14 +88,14 @@ const Scanner = () => {
         <p className="text-slate-400 text-xs font-semibold tracking-widest uppercase mb-4">Dữ liệu Giả lập (Test Data)</p>
         <div className="flex gap-4 justify-center flex-wrap">
           <button 
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 border border-blue-400 text-white font-medium hover:from-blue-500 hover:to-indigo-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:scale-105" 
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 border border-amber-400 text-white font-medium hover:from-amber-500 hover:to-orange-500 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all duration-300 transform hover:scale-105" 
             onClick={() => handleMockScan('040090001234')}
           >
             <QrCode size={18} />
             <span>Nguyễn Văn A</span>
           </button>
           <button 
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 border border-blue-400 text-white font-medium hover:from-blue-500 hover:to-indigo-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] transition-all duration-300 transform hover:scale-105" 
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-amber-600 to-orange-600 border border-amber-400 text-white font-medium hover:from-amber-500 hover:to-orange-500 hover:shadow-[0_0_20px_rgba(245,158,11,0.6)] transition-all duration-300 transform hover:scale-105" 
             onClick={() => handleMockScan('040085004321')}
           >
             <QrCode size={18} />
@@ -110,8 +110,8 @@ const Scanner = () => {
         #reader__dashboard_section_csr span { color: #94a3b8 !important; }
         #reader button { 
           background: #0f172a;
-          color: #60a5fa; /* blue-400 */
-          border: 1px solid #1e3a8a; /* blue-900 */
+          color: #fbbf24; /* amber-400 */
+          border: 1px solid #78350f; /* amber-900 */
           padding: 8px 16px;
           border-radius: 8px;
           cursor: pointer;
@@ -120,10 +120,10 @@ const Scanner = () => {
           font-weight: 500;
         }
         #reader button:hover {
-          border-color: #3b82f6; /* blue-500 */
-          box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+          border-color: #f59e0b; /* amber-500 */
+          box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
         }
-        #reader a { color: #60a5fa !important; }
+        #reader a { color: #fbbf24 !important; }
       `}</style>
     </div>
   );
