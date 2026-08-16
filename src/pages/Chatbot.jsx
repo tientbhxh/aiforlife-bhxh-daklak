@@ -20,7 +20,7 @@ Luôn trả lời bằng tiếng Việt, ngôn ngữ lịch sự, rõ ràng, d�
 Cố gắng cung cấp các bước thực hiện thủ tục rõ ràng nếu người dùng hỏi về thủ tục.
 `;
 
-const Chatbot = () => {
+const Chatbot = ({ embedded = false }) => {
   const [messages, setMessages] = useState([
     { role: 'model', content: 'Xin chào! Tôi là Trợ lý AI của cơ quan Bảo hiểm Xã hội Đắk Lắk. Tôi có thể giúp gì cho bạn hôm nay về các thủ tục BHXH, BHYT?' }
   ]);
@@ -116,68 +116,61 @@ const Chatbot = () => {
   };
 
   return (
-    <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', height: 'calc(100vh - 150px)' }}>
-      <div style={{ marginBottom: '1rem' }}>
-        <h2 style={{ fontSize: '1.75rem', color: 'var(--text-dark)' }}>Trợ lý AI Tư vấn Chính sách</h2>
-        <p style={{ color: 'var(--text-muted)' }}>Hỏi đáp nhanh các quy định về BHXH, BHYT, BHTN.</p>
-      </div>
-
-      {error && (
-        <div style={{ background: 'rgba(239, 68, 68, 0.1)', borderLeft: '4px solid var(--danger-color)', padding: '0.75rem', borderRadius: '4px', marginBottom: '1rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <ShieldAlert color="var(--danger-color)" size={18} />
-          <span style={{ color: 'var(--danger-color)', fontSize: '0.9rem' }}>{error}</span>
+    <div className={`flex flex-col w-full h-full ${embedded ? 'p-0' : 'max-w-4xl mx-auto p-4'}`}>
+      {!embedded && (
+        <div className="mb-6">
+          <h2 className="text-2xl font-bold text-white glow-text mb-2">Trợ lý AI Tự động</h2>
+          <p className="text-cyan-500/80">Hỏi đáp nhanh các quy định về BHXH, BHYT, BHTN.</p>
         </div>
       )}
 
-      <div className="glass-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        {/* Khung Chat */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      {error && (
+        <div className="bg-red-900/20 border-l-4 border-red-500 p-3 rounded-r-lg mb-4 flex items-center gap-2">
+          <ShieldAlert className="text-red-500" size={18} />
+          <span className="text-red-400 text-sm">{error}</span>
+        </div>
+      )}
+
+      <div className={`flex flex-col flex-1 overflow-hidden ${!embedded ? 'bg-slate-900/50 border border-cyan-500/20 rounded-xl backdrop-blur-sm shadow-[0_8px_32px_rgba(0,0,0,0.3)]' : ''}`}>
+        {/* Chat History */}
+        <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 custom-scrollbar">
           {messages.map((msg, idx) => (
-            <div key={idx} style={{ 
-              display: 'flex', 
-              gap: '1rem', 
-              alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start',
-              maxWidth: '80%'
-            }}>
+            <div key={idx} className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end' : 'self-start'}`}>
               {msg.role === 'model' && (
-                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--primary-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', flexShrink: 0 }}>
-                  <Bot size={20} />
+                <div className="w-8 h-8 rounded-full bg-cyan-900 border border-cyan-500/50 flex items-center justify-center text-cyan-400 shrink-0 shadow-[0_0_10px_rgba(34,211,238,0.2)]">
+                  <Bot size={16} />
                 </div>
               )}
               
-              <div style={{ 
-                background: msg.role === 'user' ? 'var(--primary-color)' : 'rgba(255,255,255,0.7)', 
-                color: msg.role === 'user' ? 'white' : 'var(--text-dark)',
-                padding: '1rem', 
-                borderRadius: msg.role === 'user' ? '16px 16px 0 16px' : '16px 16px 16px 0',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.05)',
-                border: msg.role === 'model' ? '1px solid var(--glass-border)' : 'none'
-              }}>
+              <div className={`p-3 rounded-2xl ${msg.role === 'user' 
+                ? 'bg-cyan-600 text-white rounded-tr-sm shadow-[0_0_15px_rgba(8,145,178,0.4)]' 
+                : 'bg-slate-800/80 border border-slate-700 text-slate-300 rounded-tl-sm shadow-inner'
+              }`}>
                 {msg.role === 'user' ? (
-                  msg.content
+                  <p className="text-sm">{msg.content}</p>
                 ) : (
-                  <div className="markdown-body" style={{ fontSize: '0.95rem', lineHeight: '1.5' }}>
+                  <div className="markdown-body text-sm leading-relaxed prose prose-invert prose-p:mb-2 prose-p:last:mb-0 prose-ul:my-1 max-w-none">
                     <ReactMarkdown>{msg.content}</ReactMarkdown>
                   </div>
                 )}
               </div>
 
               {msg.role === 'user' && (
-                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-light)', border: '1px solid var(--glass-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)', flexShrink: 0 }}>
-                  <User size={20} />
+                <div className="w-8 h-8 rounded-full bg-slate-800 border border-slate-600 flex items-center justify-center text-slate-400 shrink-0">
+                  <User size={16} />
                 </div>
               )}
             </div>
           ))}
           
           {isLoading && (
-            <div style={{ display: 'flex', gap: '1rem', alignSelf: 'flex-start' }}>
-               <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--primary-light)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
-                  <Bot size={20} />
+            <div className="flex gap-3 self-start">
+               <div className="w-8 h-8 rounded-full bg-cyan-900 border border-cyan-500/50 flex items-center justify-center text-cyan-400 animate-pulse">
+                  <Bot size={16} />
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.7)', padding: '1rem', borderRadius: '16px 16px 16px 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Loader2 className="animate-spin" size={18} color="var(--primary-color)" style={{ animation: 'spin 1s linear infinite' }} />
-                  <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Đang suy nghĩ...</span>
+                <div className="bg-slate-800/80 border border-slate-700 p-3 rounded-2xl rounded-tl-sm flex items-center gap-2">
+                  <Loader2 className="animate-spin text-cyan-400" size={16} />
+                  <span className="text-slate-400 text-sm">Đang phân tích dữ liệu...</span>
                 </div>
             </div>
           )}
@@ -185,35 +178,26 @@ const Chatbot = () => {
         </div>
 
         {/* Input form */}
-        <div style={{ padding: '1rem', borderTop: '1px solid var(--glass-border)', background: 'rgba(255,255,255,0.3)' }}>
-          <form onSubmit={handleSend} style={{ display: 'flex', gap: '0.5rem' }}>
+        <div className="p-3 border-t border-cyan-500/20 bg-slate-900/80 backdrop-blur-md">
+          <form onSubmit={handleSend} className="flex gap-2">
             <input 
               type="text" 
-              className="input-field" 
-              placeholder="Nhập câu hỏi của bạn về BHXH, BHYT..."
+              className="flex-1 bg-slate-950 border border-slate-700 text-slate-200 text-sm rounded-lg px-4 py-2 focus:outline-none focus:border-cyan-500 focus:shadow-[0_0_10px_rgba(34,211,238,0.2)] transition-all" 
+              placeholder="Nhập câu hỏi hoặc truy vấn..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={isLoading}
-              style={{ flex: 1 }}
             />
             <button 
               type="submit" 
-              className="btn btn-primary" 
+              className="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_15px_rgba(34,211,238,0.5)]" 
               disabled={isLoading || !input.trim()}
-              style={{ padding: '0 1.5rem' }}
             >
               <Send size={18} />
             </button>
           </form>
         </div>
       </div>
-      <style>{`
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        .markdown-body p { margin-bottom: 0.5rem; }
-        .markdown-body p:last-child { margin-bottom: 0; }
-        .markdown-body ul, .markdown-body ol { margin-left: 1.5rem; margin-bottom: 0.5rem; }
-        .markdown-body strong { font-weight: 600; color: var(--primary-dark); }
-      `}</style>
     </div>
   );
 };
