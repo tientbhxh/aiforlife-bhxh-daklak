@@ -35,19 +35,19 @@ const Layout = () => {
               <img src="/aiforlife-bhxh-daklak/logo-bhxh.png" alt="Logo" className="w-8 h-8 object-contain z-10" />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-cyan-400 dark:to-blue-500 hidden sm:block">BHXH Đắk Lắk</h1>
-              <p className="text-xs text-blue-600/80 dark:text-cyan-500/80 uppercase tracking-widest font-semibold">AI SaaS System</p>
+              <h1 className="text-xl font-bold tracking-wider text-white dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-cyan-400 dark:to-blue-500 hidden sm:block">BHXH Đắk Lắk</h1>
+              <p className="text-xs text-blue-100/90 dark:text-cyan-500/80 uppercase tracking-widest font-semibold">AI SaaS System</p>
             </div>
           </Link>
 
           <div className="flex items-center gap-6">
             <nav className="hidden md:flex items-center gap-6">
-              <Link to="/" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors duration-300">Trang chủ</Link>
-              <Link to="/settings" className="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-cyan-400 transition-colors duration-300">Cài đặt API</Link>
+              <Link to="/" className="text-sm font-medium text-blue-50 dark:text-slate-300 hover:text-white dark:hover:text-cyan-400 transition-colors duration-300">Trang chủ</Link>
+              <Link to="/settings" className="text-sm font-medium text-blue-50 dark:text-slate-300 hover:text-white dark:hover:text-cyan-400 transition-colors duration-300">Cài đặt API</Link>
             </nav>
             <button 
               onClick={toggleTheme}
-              className="p-2 rounded-full border border-slate-200 dark:border-slate-700 hover:border-blue-500 dark:hover:border-cyan-500 hover:text-blue-600 dark:hover:text-cyan-400 text-slate-500 dark:text-slate-400 transition-all duration-300 bg-white dark:bg-slate-900"
+              className="p-2 rounded-full border border-blue-500 dark:border-slate-700 hover:border-white dark:hover:border-cyan-500 hover:text-white dark:hover:text-cyan-400 text-blue-100 dark:text-slate-400 transition-all duration-300 bg-blue-600 dark:bg-slate-900"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
