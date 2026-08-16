@@ -85,7 +85,7 @@ const Scanner = () => {
       </div>
       
       <div className="mt-8 text-center w-full">
-        <p className="text-slate-400 text-xs font-semibold tracking-widest uppercase mb-4">Dữ liệu Giả lập (Test Data)</p>
+        <p className="text-slate-500 dark:text-slate-400 text-xs font-semibold tracking-widest uppercase mb-4">Dữ liệu Giả lập (Test Data)</p>
         <div className="flex gap-4 justify-center flex-wrap">
           <button 
             className="group relative overflow-hidden flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:shadow-lg transition-all duration-300 hover:scale-105 border border-white/10" 
@@ -109,11 +109,13 @@ const Scanner = () => {
       {/* Tweak html5-qrcode UI to match cyberpunk theme */}
       <style>{`
         #reader { border: none !important; }
-        #reader__dashboard_section_csr span { color: #94a3b8 !important; }
+        #reader__dashboard_section_csr span { color: #64748b !important; }
+        .dark #reader__dashboard_section_csr span { color: #94a3b8 !important; }
+        
         #reader button { 
-          background: #1e293b;
-          color: #e2e8f0; 
-          border: 1px solid #334155; 
+          background: #f8fafc;
+          color: #0f172a; 
+          border: 1px solid #cbd5e1; 
           padding: 8px 16px;
           border-radius: 9999px;
           cursor: pointer;
@@ -121,12 +123,25 @@ const Scanner = () => {
           transition: all 0.3s ease;
           font-weight: 500;
         }
+        .dark #reader button {
+          background: #1e293b;
+          color: #e2e8f0; 
+          border-color: #334155; 
+        }
+        
         #reader button:hover {
+          border-color: #0284c7; 
+          background: #0284c7;
+          color: white;
+        }
+        .dark #reader button:hover {
           border-color: #38bdf8; 
           background: #38bdf8;
           color: white;
         }
-        #reader a { color: #38bdf8 !important; }
+        
+        #reader a { color: #0284c7 !important; }
+        .dark #reader a { color: #38bdf8 !important; }
       `}</style>
     </div>
   );

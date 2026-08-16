@@ -119,8 +119,8 @@ const Chatbot = ({ embedded = false }) => {
     <div className={`flex flex-col w-full h-full ${embedded ? 'p-0' : 'max-w-4xl mx-auto p-4'}`}>
       {!embedded && (
         <div className="mb-6">
-          <h2 className="text-2xl font-bold text-white glow-text mb-2">Trợ lý AI Tự động</h2>
-          <p className="text-cyan-500/80">Hỏi đáp nhanh các quy định về BHXH, BHYT, BHTN.</p>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Trợ lý AI Tự động</h2>
+          <p className="text-blue-600/80 dark:text-cyan-500/80">Hỏi đáp nhanh các quy định về BHXH, BHYT, BHTN.</p>
         </div>
       )}
 
@@ -131,20 +131,20 @@ const Chatbot = ({ embedded = false }) => {
         </div>
       )}
 
-      <div className={`flex flex-col flex-1 overflow-hidden ${!embedded ? 'bg-[#131b2f]/80 border border-slate-700/50 rounded-2xl backdrop-blur-md shadow-lg shadow-black/20' : ''}`}>
+      <div className={`flex flex-col flex-1 overflow-hidden ${!embedded ? 'bg-white/80 dark:bg-[#131b2f]/80 border border-slate-200 dark:border-slate-700/50 rounded-2xl backdrop-blur-md shadow-md dark:shadow-lg dark:shadow-black/20' : ''}`}>
         {/* Chat History */}
         <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 custom-scrollbar">
           {messages.map((msg, idx) => (
             <div key={idx} className={`flex gap-3 max-w-[85%] ${msg.role === 'user' ? 'self-end' : 'self-start'}`}>
               {msg.role === 'model' && (
-                <div className="w-8 h-8 rounded-full bg-[#1e293b] border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#1e293b] border border-blue-200 dark:border-cyan-500/30 flex items-center justify-center text-blue-600 dark:text-cyan-400 shrink-0">
                   <Bot size={16} />
                 </div>
               )}
               
               <div className={`p-3 rounded-2xl ${msg.role === 'user' 
                 ? 'bg-blue-600 text-white rounded-tr-sm shadow-sm' 
-                : 'bg-[#1e293b] border border-slate-700/50 text-slate-300 rounded-tl-sm'
+                : 'bg-slate-50 dark:bg-[#1e293b] border border-slate-200 dark:border-slate-700/50 text-slate-800 dark:text-slate-300 rounded-tl-sm'
               }`}>
                 {msg.role === 'user' ? (
                   <p className="text-sm">{msg.content}</p>
@@ -165,12 +165,12 @@ const Chatbot = ({ embedded = false }) => {
           
           {isLoading && (
             <div className="flex gap-3 self-start">
-               <div className="w-8 h-8 rounded-full bg-[#1e293b] border border-cyan-500/30 flex items-center justify-center text-cyan-400 animate-pulse">
+               <div className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#1e293b] border border-blue-200 dark:border-cyan-500/30 flex items-center justify-center text-blue-600 dark:text-cyan-400 animate-pulse">
                 <Bot size={16} />
               </div>
-              <div className="bg-[#1e293b] border border-slate-700/50 p-3 rounded-2xl rounded-tl-sm flex items-center gap-2">
-                <Loader2 className="animate-spin text-cyan-400" size={16} />
-                <span className="text-slate-400 text-sm">Đang phân tích dữ liệu...</span>
+              <div className="bg-slate-50 dark:bg-[#1e293b] border border-slate-200 dark:border-slate-700/50 p-3 rounded-2xl rounded-tl-sm flex items-center gap-2">
+                <Loader2 className="animate-spin text-blue-600 dark:text-cyan-400" size={16} />
+                <span className="text-slate-600 dark:text-slate-400 text-sm">Đang phân tích dữ liệu...</span>
               </div>
             </div>
           )}
@@ -178,12 +178,12 @@ const Chatbot = ({ embedded = false }) => {
         </div>
 
         {/* Input form */}
-        <div className="p-3 border-t border-slate-700/50 bg-[#131b2f]">
-          <form onSubmit={handleSend} className="flex gap-3">
-            <input 
-              type="text" 
-              className="flex-1 bg-[#1e293b] border border-slate-700/50 text-white text-sm rounded-full px-5 py-3 focus:outline-none focus:border-cyan-500/50 focus:bg-[#233147] transition-all" 
-              placeholder="Nhập câu hỏi hoặc truy vấn..."
+      <div className="p-3 border-t border-slate-200 dark:border-slate-700/50 bg-slate-100 dark:bg-[#131b2f]">
+        <form onSubmit={handleSend} className="flex gap-3">
+          <input 
+            type="text" 
+            className="flex-1 bg-white dark:bg-[#1e293b] border border-slate-300 dark:border-slate-700/50 text-slate-900 dark:text-white text-sm rounded-full px-5 py-3 focus:outline-none focus:border-blue-500 dark:focus:border-cyan-500/50 focus:bg-slate-50 dark:focus:bg-[#233147] transition-all" 
+            placeholder="Nhập câu hỏi hoặc truy vấn..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={isLoading}
