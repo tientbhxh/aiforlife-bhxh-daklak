@@ -4,7 +4,7 @@ import { Moon, Sun, ShieldCheck } from 'lucide-react';
 
 const Layout = () => {
   // Theme logic for dark/light mode toggle
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   useEffect(() => {
     if (theme === 'dark') {
@@ -20,17 +20,17 @@ const Layout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-blue-50/50 dark:bg-[#0B1120] relative flex flex-col text-slate-900 dark:text-slate-200 font-sans transition-colors duration-300 overflow-x-hidden">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 relative flex flex-col text-slate-900 dark:text-slate-200 font-sans transition-colors duration-300 overflow-x-hidden">
       
       {/* Background Radial Glow */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-200/40 dark:bg-cyan-900/20 rounded-full blur-[150px] pointer-events-none"></div>
-      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-200/40 dark:bg-blue-900/20 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-200/40 dark:bg-cyan-500/10 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-200/40 dark:bg-cyan-600/10 rounded-full blur-[150px] pointer-events-none"></div>
 
       {/* HEADER */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 dark:bg-[#0B1120]/80 border-b border-slate-200 dark:border-slate-700/50 shadow-sm">
+      <header className="sticky top-0 z-50 w-full bg-blue-700 dark:bg-cyan-950/40 dark:backdrop-blur-md border-b border-blue-800 dark:border-cyan-800/50 shadow-md dark:shadow-cyan-900/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group relative">
-            <div className="w-10 h-10 rounded-full bg-white dark:bg-[#131b2f] border border-slate-200 dark:border-cyan-500/30 flex items-center justify-center transition-all duration-300 overflow-hidden relative group-hover:border-cyan-400">
+            <div className="w-10 h-10 rounded-full bg-white dark:bg-cyan-900/50 border border-blue-500 dark:border-cyan-500/30 flex items-center justify-center transition-all duration-300 overflow-hidden relative group-hover:border-cyan-200 dark:group-hover:border-cyan-400">
               <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/50 dark:via-white/20 to-transparent group-hover:animate-shimmer"></div>
               <img src="/aiforlife-bhxh-daklak/logo-bhxh.png" alt="Logo" className="w-8 h-8 object-contain z-10" />
             </div>
@@ -63,13 +63,13 @@ const Layout = () => {
       </main>
 
       {/* FOOTER */}
-      <footer className="w-full border-t border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-950/90 py-6 mt-auto">
+      <footer className="w-full border-t border-slate-200 dark:border-cyan-900/50 bg-white/90 dark:bg-cyan-950/80 py-6 mt-auto">
         <div className="max-w-7xl mx-auto px-4 flex flex-col items-center justify-center gap-2">
-          <div className="flex items-center gap-2 text-blue-600 dark:text-cyan-500">
+          <div className="flex items-center gap-2 text-blue-600 dark:text-cyan-400">
             <ShieldCheck size={20} />
             <span className="text-sm font-medium uppercase tracking-wider">Hệ thống Bảo mật cấp cao</span>
           </div>
-          <p className="text-slate-500 text-xs">
+          <p className="text-slate-500 dark:text-cyan-200/50 text-xs">
             Sản phẩm dự thi AI For Life 2026 - Phát triển cho BHXH Đắk Lắk
           </p>
         </div>
