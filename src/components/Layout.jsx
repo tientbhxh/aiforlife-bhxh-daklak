@@ -20,10 +20,10 @@ const Layout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 dark:bg-slate-950 bg-grid-pattern relative flex flex-col text-slate-200 font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-slate-900 dark:bg-slate-900 bg-grid-pattern relative flex flex-col text-slate-200 font-sans transition-colors duration-300">
       
       {/* HEADER */}
-      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-slate-950/80 border-b border-cyan-500/30 shadow-[0_4px_30px_rgba(34,211,238,0.15)]">
+      <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-slate-900/80 border-b border-cyan-500/30 shadow-[0_4px_30px_rgba(34,211,238,0.15)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full bg-slate-900 border border-cyan-500/50 flex items-center justify-center group-hover:glow-border transition-all duration-300 overflow-hidden">

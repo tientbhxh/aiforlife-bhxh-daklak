@@ -30,6 +30,10 @@
     text-shadow: 0 0 12px rgba(34, 211, 238, 0.8);
   }
 
+  .glow-text-blue {
+    text-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+  }
+
   .glow-text-emerald {
     text-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
   }
