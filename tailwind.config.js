@@ -8,7 +8,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'Roboto', 'sans-serif'],
+        sans: ['"Space Grotesk"', 'Inter', 'sans-serif'],
       },
       colors: {
         slate: {

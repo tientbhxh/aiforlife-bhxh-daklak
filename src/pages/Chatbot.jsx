@@ -178,11 +178,11 @@ const Chatbot = ({ embedded = false }) => {
         </div>
 
         {/* Input form */}
-        <div className="p-3 border-t border-cyan-500/20 bg-slate-900/80 backdrop-blur-md">
-          <form onSubmit={handleSend} className="flex gap-2">
+        <div className="p-3 border-t border-cyan-400/40 bg-slate-800">
+          <form onSubmit={handleSend} className="flex gap-3">
             <input 
               type="text" 
-              className="flex-1 bg-slate-950 border border-slate-700 text-slate-200 text-sm rounded-lg px-4 py-2 focus:outline-none focus:border-cyan-500 focus:shadow-[0_0_10px_rgba(34,211,238,0.2)] transition-all" 
+              className="flex-1 bg-slate-900 border border-cyan-500/30 text-white text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 focus:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all" 
               placeholder="Nhập câu hỏi hoặc truy vấn..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -190,10 +190,10 @@ const Chatbot = ({ embedded = false }) => {
             />
             <button 
               type="submit" 
-              className="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_15px_rgba(34,211,238,0.5)]" 
+              className="bg-gradient-to-r from-cyan-600 to-blue-600 border border-cyan-400 hover:from-cyan-500 hover:to-blue-500 text-white px-5 py-3 rounded-xl flex items-center justify-center transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transform hover:scale-105" 
               disabled={isLoading || !input.trim()}
             >
-              <Send size={18} />
+              <Send size={20} />
             </button>
           </form>
         </div>

@@ -85,21 +85,21 @@ const Scanner = () => {
       </div>
       
       <div className="mt-8 text-center w-full">
-        <p className="text-slate-500 text-xs font-semibold tracking-widest uppercase mb-4">Dữ liệu Giả lập (Test Data)</p>
-        <div className="flex gap-3 justify-center flex-wrap">
+        <p className="text-slate-400 text-xs font-semibold tracking-widest uppercase mb-4">Dữ liệu Giả lập (Test Data)</p>
+        <div className="flex gap-4 justify-center flex-wrap">
           <button 
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-cyan-400 hover:bg-slate-800 hover:border-cyan-500 hover:shadow-[0_0_10px_rgba(34,211,238,0.3)] transition-all duration-300" 
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 border border-cyan-400 text-white font-medium hover:from-cyan-500 hover:to-blue-500 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300 transform hover:scale-105" 
             onClick={() => handleMockScan('040090001234')}
           >
-            <QrCode size={16} />
-            <span className="text-sm font-medium">Nguyễn Văn A</span>
+            <QrCode size={18} />
+            <span>Nguyễn Văn A</span>
           </button>
           <button 
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 text-cyan-400 hover:bg-slate-800 hover:border-cyan-500 hover:shadow-[0_0_10px_rgba(34,211,238,0.3)] transition-all duration-300" 
+            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 border border-cyan-400 text-white font-medium hover:from-cyan-500 hover:to-blue-500 hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all duration-300 transform hover:scale-105" 
             onClick={() => handleMockScan('040085004321')}
           >
-            <QrCode size={16} />
-            <span className="text-sm font-medium">Trần Thị B</span>
+            <QrCode size={18} />
+            <span>Trần Thị B</span>
           </button>
         </div>
       </div>
