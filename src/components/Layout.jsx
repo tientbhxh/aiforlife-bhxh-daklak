@@ -20,7 +20,7 @@ const Layout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0B1120] relative flex flex-col text-slate-900 dark:text-slate-200 font-sans transition-colors duration-300 overflow-x-hidden">
+    <div className="min-h-screen bg-blue-50/50 dark:bg-[#0B1120] relative flex flex-col text-slate-900 dark:text-slate-200 font-sans transition-colors duration-300 overflow-x-hidden">
       
       {/* Background Radial Glow */}
       <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-cyan-200/40 dark:bg-cyan-900/20 rounded-full blur-[150px] pointer-events-none"></div>
