@@ -6,8 +6,8 @@ const Dashboard = () => {
   return (
     <div className="w-full h-[calc(100vh-140px)] flex flex-col lg:flex-row gap-6">
       {/* Left Pane - QR Scanner */}
-      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-slate-800/80 border border-emerald-500/40 rounded-xl overflow-hidden backdrop-blur-md shadow-[0_8px_32px_rgba(16,185,129,0.15)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(16,185,129,0.25)] hover:border-emerald-400/60">
-        <div className="p-4 border-b border-emerald-500/40 bg-emerald-950/30 flex items-center gap-3">
+      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-slate-800 border-2 border-emerald-500/60 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(16,185,129,0.35)] hover:border-emerald-400">
+        <div className="p-4 border-b-2 border-emerald-500/60 bg-emerald-900/30 flex items-center gap-3">
           <h2 className="text-xl font-bold text-white tracking-wide glow-text-emerald">Hệ thống Nhận diện (QR)</h2>
         </div>
         <div className="flex-1 overflow-y-auto p-4 custom-scrollbar">
@@ -16,8 +16,8 @@ const Dashboard = () => {
       </div>
 
       {/* Right Pane - Chatbot AI */}
-      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-slate-800/80 border border-cyan-500/40 rounded-xl overflow-hidden backdrop-blur-md shadow-[0_8px_32px_rgba(34,211,238,0.15)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(34,211,238,0.25)] hover:border-cyan-400/60">
-        <div className="p-4 border-b border-cyan-500/40 bg-cyan-950/30 flex items-center justify-between">
+      <div className="flex-1 h-full min-h-[500px] flex flex-col bg-slate-800 border-2 border-cyan-500/60 rounded-xl overflow-hidden shadow-[0_0_30px_rgba(34,211,238,0.2)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(34,211,238,0.35)] hover:border-cyan-400">
+        <div className="p-4 border-b-2 border-cyan-500/60 bg-cyan-900/30 flex items-center justify-between">
           <div>
             <h2 className="text-xl font-bold text-white tracking-wide glow-text">Trợ lý AI Phân tích</h2>
           </div>
